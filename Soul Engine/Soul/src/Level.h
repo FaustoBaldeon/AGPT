@@ -1,5 +1,6 @@
 #pragma once
-#include "spch.h"
+#include "Actor.h"
+#include <vector>
 
 class Level
 {
@@ -8,10 +9,12 @@ public:
 	Level();
 	~Level();
 
-	//void AddActor(const Actor& newActor);
+	void AddActor(const Actor& newActor);
 
 
 private:
-//	std::vector<Actor> actorsLevel;
+
+	std::vector<Actor> actorsLevel;
+
 };
 

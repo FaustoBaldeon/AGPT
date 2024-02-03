@@ -1,5 +1,6 @@
 #pragma once
 #include "spch.h"
+#include "Renderer.h"
 
 namespace Soul 
 {
@@ -44,6 +45,7 @@ namespace Soul
 
 		SDL_Event event;
 
+		Renderer render;
 
 	};
 

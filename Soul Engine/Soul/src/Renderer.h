@@ -1,5 +1,7 @@
 #pragma once
 #include "spch.h"
+#include "Shader.h"
+#include "glad/glad.h"
 
 
 namespace Soul {
@@ -7,15 +9,18 @@ namespace Soul {
 	class Renderer{
 	public:
 
-		static void Init(SDL_Window* window);
+		void Init(SDL_Window* window);
 
-		static SDL_Texture* LoadTexture(std::string filePath);
+		SDL_Texture* LoadTexture(std::string filePath);
 
-		static SDL_Renderer* GetRenderer() { return renderTarget; }
+		void BackCol();
+
 
 	private:
-		static SDL_Renderer* renderTarget;
-
+		
+		void InitRenderData();
+		unsigned int quadVAO;
+		
 	};
 }
 

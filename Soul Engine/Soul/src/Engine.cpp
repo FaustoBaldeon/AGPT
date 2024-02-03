@@ -4,6 +4,8 @@ namespace Soul
 {
 	Engine* Engine::instance;
 
+	
+
 	void Engine::Initialize(const char* title, int width, int height)
 	{
 
@@ -19,7 +21,7 @@ namespace Soul
 		std::cout << "Subsystems initialized!" << std::endl;
 
 		//Create window
-		window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
+		window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
 		if (window == nullptr) {
 			std::cout << "[ERROR]: Window could not be created..." << std::endl;
 
@@ -29,10 +31,11 @@ namespace Soul
 		std::cout << "Window created!" << std::endl;
 
 		//Initialize Renderer
-		Renderer::Init(window);
-		std::cout << "Renderer initialized!" << std::endl;
+		
+		render.Init(window);
 
-		testTexture = Renderer::LoadTexture("Assets/galaxy2.bmp");
+
+		//testTexture = Renderer::LoadTexture("Assets/galaxy2.bmp");
 		
 
 		//End init
@@ -103,9 +106,12 @@ namespace Soul
 
 	void Engine::Render()
 	{
-		SDL_RenderClear(Renderer::GetRenderer());
+		/*SDL_RenderClear(Renderer::GetRenderer());
 		SDL_RenderCopy(Renderer::GetRenderer(), testTexture, NULL, NULL);
-		SDL_RenderPresent(Renderer::GetRenderer());
+		SDL_RenderPresent(Renderer::GetRenderer());*/
+
+		render.BackCol();
+		SDL_GL_SwapWindow(window); 
 	}
 
 	void Engine::StopRunning() 
@@ -118,10 +124,11 @@ namespace Soul
 	void Engine::Clean() 
 	{
 		if (window != nullptr) {
-			SDL_DestroyWindow(window);
-			window = nullptr;
+			SDL_GL_DeleteContext(SDL_GL_GetCurrentContext());
+			SDL_DestroyWindow(window); 
+			window = nullptr; 
 		};
-		SDL_DestroyRenderer(Renderer::GetRenderer());
+		//SDL_DestroyRenderer(Renderer::GetRenderer());
 	}
 
 	Engine::Engine(){}

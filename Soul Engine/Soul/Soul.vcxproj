@@ -149,6 +149,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\Actor.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="vendor\glad\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Level.h" />
     <ClInclude Include="src\Actor.h" />
     <ClInclude Include="src\Renderer.h" />
