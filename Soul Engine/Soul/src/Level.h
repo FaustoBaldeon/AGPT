@@ -9,11 +9,7 @@ public:
 	Level();
 	~Level();
 
-	void AddActor(const Actor& newActor);
-
-
-private:
-
+	void AddActor(Actor& newActor);
 	std::vector<Actor> actorsLevel;
 
 };

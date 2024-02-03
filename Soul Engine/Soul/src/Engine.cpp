@@ -34,8 +34,6 @@ namespace Soul
 		
 		render.Init(window);
 
-
-		//testTexture = Renderer::LoadTexture("Assets/galaxy2.bmp");
 		
 
 		//End init
@@ -50,7 +48,7 @@ namespace Soul
 		while (isRunning) //Game Loop
 		{
 			currentTime = (float)SDL_GetTicks();
-			float deltaTime = (currentTime - previousTime) / 1000.f;
+			float deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
 
 			frameTime += deltaTime;
@@ -62,6 +60,22 @@ namespace Soul
 			//Game World Update
 
 			Render();
+
+			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+			{
+				if (currentLevel.actorsLevel[i].pendingDelete == true)
+				{
+					currentLevel.actorsLevel[i].OnDestroyed();
+					currentLevel.actorsLevel.erase(currentLevel.actorsLevel.begin()+i);
+				}
+			}
+
+			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+			{
+				currentLevel.actorsLevel[i].OnUpdate();
+
+				//more update things
+			}
 
 		}
 	}
@@ -106,9 +120,6 @@ namespace Soul
 
 	void Engine::Render()
 	{
-		/*SDL_RenderClear(Renderer::GetRenderer());
-		SDL_RenderCopy(Renderer::GetRenderer(), testTexture, NULL, NULL);
-		SDL_RenderPresent(Renderer::GetRenderer());*/
 
 		render.BackCol();
 		SDL_GL_SwapWindow(window); 
@@ -128,7 +139,6 @@ namespace Soul
 			SDL_DestroyWindow(window); 
 			window = nullptr; 
 		};
-		//SDL_DestroyRenderer(Renderer::GetRenderer());
 	}
 
 	Engine::Engine(){}

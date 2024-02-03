@@ -1,6 +1,8 @@
 #pragma once
 #include "spch.h"
 #include "Renderer.h"
+#include "Level.h"
+#include "Actor.h"
 
 namespace Soul 
 {
@@ -27,6 +29,9 @@ namespace Soul
 
 		static Engine* getEngine() { return instance; }
 
+		Level& getLevel(){return currentLevel;}
+	
+
 	private:
 
 		static Engine* instance;
@@ -41,11 +46,13 @@ namespace Soul
 
 		SDL_Window* window = nullptr;
 
-		SDL_Texture* testTexture = nullptr;
-
 		SDL_Event event;
 
 		Renderer render;
+
+		Level currentLevel; 
+
+		
 
 	};
 

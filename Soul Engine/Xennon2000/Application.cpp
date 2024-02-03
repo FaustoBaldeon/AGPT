@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
 	Engine engine;
 
-	engine.Initialize("Test Window", 640, 480);
+	engine.Initialize("Xenon2000", 640, 480);
 	engine.Run();
 	engine.Clean();
 

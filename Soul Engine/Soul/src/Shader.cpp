@@ -42,6 +42,10 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 		glDeleteShader(id);
 		return 0;
 	}
+	else
+	{
+		std::cout << "Compiled Succesfully " << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
+	}
 
 	return id;
 }
