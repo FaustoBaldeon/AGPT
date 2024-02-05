@@ -21,14 +21,21 @@ namespace Soul {
 
 		void SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows);
 
-		//void transformModelMatrix(glm::vec3 position, glm::vec3 rotationAxis, float angle);
+
 
 
 	private:
 		
 		void InitRenderData();
 
-		std::vector<unsigned int>textList;
+		struct Texture{
+			unsigned int textureID;
+			std::string imgPath;
+		};
+
+		int isImageLoaded(std::string filePath);
+
+		std::vector<Texture>textList;
 
 		glm::mat4 projectionMatrix = glm::ortho(0.0f, 640.0f, 640.0f, 0.0f, -1.0f, 1.0f); //maybe initialize with window sizes
 
@@ -64,14 +71,25 @@ namespace Soul {
 
 		uniform sampler2D ourTexture;
 
+		/*
+			uniform vec2 texCoordNext;
+			uniform vec4 fragColorNext;
+		*/
+
 		void main()
 		{
+
 			vec4 imageColor = texture(ourTexture, TexCoord);
+
+			// vec4 colorNext = texture(ourTexture, texCoordNext);
 
 			if(imageColor == vec4(1.0f,0.f,1.0f,1.0f))
 			discard;
-
 			outColor = imageColor;
+
+			// outColor = mix(imageColor, colorNext, fract(texCoordNext.x));
+
+
 		})glsl";
 		
 	};

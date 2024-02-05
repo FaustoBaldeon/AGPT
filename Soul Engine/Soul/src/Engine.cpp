@@ -33,9 +33,6 @@ namespace Soul
 		//Initialize Renderer
 		
 		render.Init(window);
-
-		
-
 		//End init
 		std::cout << "Soul has started! \n" << std::endl;
 		

@@ -2,4 +2,5 @@
   Renderer.cpp
   spch.cpp
   Generating Code...
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Renderer.cpp(103): warning C4715: 'Soul::Renderer::LoadTexture': not all control paths return a value
   Soul.vcxproj -> C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\bin\Debug-x64\Soul\Soul.lib

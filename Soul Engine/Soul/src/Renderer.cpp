@@ -60,46 +60,57 @@ namespace Soul {
 
 	unsigned int Renderer::LoadTexture(std::string filePath)
 	{
+		int alreadyLoaded = isImageLoaded(filePath);
 
-		GLuint texture;
-		glGenTextures(1, &texture);
-		glBindTexture(GL_TEXTURE_2D, texture); 
-
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-		stbi_set_flip_vertically_on_load(true);
-
-		int width, height, nrChannels; 
-		unsigned char* image_data = stbi_load(filePath.c_str(), &width, &height, &nrChannels, 0); 
-
-		if (image_data)
+		if (alreadyLoaded == -1)
 		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image_data);
-			glGenerateMipmap(GL_TEXTURE_2D);
+			GLuint textID;
+			glGenTextures(1, &textID);
+			glBindTexture(GL_TEXTURE_2D, textID);
+
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+			stbi_set_flip_vertically_on_load(true);
+
+			int width, height, nrChannels;
+			unsigned char* image_data = stbi_load(filePath.c_str(), &width, &height, &nrChannels, 0);
+
+			if (image_data)
+			{
+				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image_data);
+				glGenerateMipmap(GL_TEXTURE_2D);
+
+				Texture texture;
+				texture.imgPath = filePath;
+				texture.textureID = textID;
+				textList.push_back(texture); 
+				return textID;
+			}
+			else
+			{
+				std::cout << "Failed to load texture" << std::endl;
+			}
+			stbi_image_free(image_data); 
 		}
 		else
 		{
-			std::cout << "Failed to load texture" << std::endl;
+			return alreadyLoaded; 
 		}
-		stbi_image_free(image_data);
 
-		textList.push_back(texture);
-
-		return texture; //return texture ID
 	}
 
 	void Renderer::InitRenderData() 
 	{
 		
 		float vertices[] = {
-			// positions         // texture coords
-			0.5f,  0.5f, 0.0f,   1.0f, 1.0f,   // top right
-			0.5f, -0.5f, 0.0f,   1.0f, 0.0f,   // bottom right
-		   -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,   // bottom left
-		   -0.5f,  0.5f, 0.0f,   0.0f, 1.0f    // top left
+			// positions         // texture coords (remove later)
+			0.5f,  0.5f, 0.0f,   1.0f, 1.0f,   
+			0.5f, -0.5f, 0.0f,   1.0f, 0.0f,   
+		   -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,   
+		   -0.5f,  0.5f, 0.0f,   0.0f, 1.0f    
 		};
 		unsigned int indices[] = {  
 		0, 1, 3,   // first triangle
@@ -155,10 +166,20 @@ namespace Soul {
 		glActiveTexture(GL_TEXTURE0); 
 
 
-		glBindTexture(GL_TEXTURE_2D, textList[0]);
+		glBindTexture(GL_TEXTURE_2D, textList[0].textureID);
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
 		
+	}
+
+	int Renderer::isImageLoaded(std::string filePath)
+	{
+		for (unsigned int i = 0; i < textList.size(); ++i)
+		{
+			if (filePath.compare(textList[i].imgPath) == 0)
+				return textList[i].textureID;
+		}
+		return -1;
 	}
 
 	void Renderer::SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows)
