@@ -113,12 +113,12 @@ namespace Soul {
 		   -0.5f,  0.5f, 0.0f,   0.0f, 1.0f    
 		};
 		unsigned int indices[] = {  
-		0, 1, 3,   // first triangle
-		1, 2, 3    // second triangle
+		0, 1, 3,   
+		1, 2, 3    
 		};
 
-		GLuint vbo; // vertex buffer object 
-		glGenBuffers(1, &vbo); // Generate 1 buffer 
+		GLuint vbo; 
+		glGenBuffers(1, &vbo); 
 
 		GLuint vao; 
 		glGenVertexArrays(1, &vao); 

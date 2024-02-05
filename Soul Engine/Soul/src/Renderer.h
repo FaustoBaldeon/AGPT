@@ -37,9 +37,9 @@ namespace Soul {
 
 		std::vector<Texture>textList;
 
-		glm::mat4 projectionMatrix = glm::ortho(0.0f, 640.0f, 640.0f, 0.0f, -1.0f, 1.0f); //maybe initialize with window sizes
+		//glm::mat4 projectionMatrix = glm::ortho(0.0f, 640.0f, 640.0f, 0.0f, -1.0f, 1.0f); //maybe initialize with window sizes
 
-		glm::mat4 modelMatrix = glm::mat4(1.0f);
+		//glm::mat4 modelMatrix = glm::mat4(1.0f);
 		
 
 
@@ -57,6 +57,8 @@ namespace Soul {
 		void main()
 		{
 			TexCoord = texCoord;
+			// gl_Position = model * vec4(position, 1.0);
+
 			gl_Position = vec4(position, 1.0);
 
 		}
@@ -73,7 +75,7 @@ namespace Soul {
 
 		/*
 			uniform vec2 texCoordNext;
-			uniform vec4 fragColorNext;
+
 		*/
 
 		void main()
