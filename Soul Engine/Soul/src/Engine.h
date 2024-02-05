@@ -30,6 +30,8 @@ namespace Soul
 		static Engine* getEngine() { return instance; }
 
 		Level& getLevel(){return currentLevel;}
+
+		float deltaTime = 0;
 	
 
 	private:

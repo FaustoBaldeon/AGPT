@@ -3,6 +3,9 @@
 #include "Shader.h"
 #include "glad/glad.h"
 #include "stb_image.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 
 namespace Soul {
@@ -16,6 +19,10 @@ namespace Soul {
 
 		void BackCol();
 
+		void SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows);
+
+		//void transformModelMatrix(glm::vec3 position, glm::vec3 rotationAxis, float angle);
+
 
 	private:
 		
@@ -23,16 +30,18 @@ namespace Soul {
 
 		std::vector<unsigned int>textList;
 
+		glm::mat4 projectionMatrix = glm::ortho(0.0f, 640.0f, 640.0f, 0.0f, -1.0f, 1.0f); //maybe initialize with window sizes
+
+		glm::mat4 modelMatrix = glm::mat4(1.0f);
+		
 
 
 		const char* vertexShaderSource = R"glsl(
 		#version 330 core
 
 		in vec3 position;
-		in vec3 color;
 		in vec2 texCoord;
 		
-		out vec3 Color;
 		out vec2 TexCoord;
 
 		uniform mat4 model;
@@ -40,7 +49,6 @@ namespace Soul {
 
 		void main()
 		{
-			Color = color;
 			TexCoord = texCoord;
 			gl_Position = vec4(position, 1.0);
 
@@ -49,7 +57,7 @@ namespace Soul {
 
 		const char* fragmentShaderSource = R"glsl(
 		#version 330 core
-		in vec3 Color;
+
 		in vec2 TexCoord;
 
 		out vec4 outColor;
@@ -59,6 +67,10 @@ namespace Soul {
 		void main()
 		{
 			vec4 imageColor = texture(ourTexture, TexCoord);
+
+			if(imageColor == vec4(1.0f,0.f,1.0f,1.0f))
+			discard;
+
 			outColor = imageColor;
 		})glsl";
 		

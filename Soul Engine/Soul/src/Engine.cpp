@@ -48,10 +48,11 @@ namespace Soul
 		while (isRunning) //Game Loop
 		{
 			currentTime = (float)SDL_GetTicks();
-			float deltaTime = (currentTime - previousTime) / 1000.f; 
+			deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
 
 			frameTime += deltaTime;
+		
 
 			HandleEvents();
 
@@ -59,7 +60,7 @@ namespace Soul
 			//PhysWorld Update
 			//Game World Update
 
-			Render();
+			
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
@@ -76,6 +77,9 @@ namespace Soul
 
 				//more update things
 			}
+
+
+			Render(); 
 
 		}
 	}
