@@ -14,7 +14,7 @@ public:
 	};
 
 	struct Animation {
-		int frameCount;
+		int totalFrames;
 		float frameDuration;
 		float elapsedTime;
 		int currentFrame;
@@ -24,6 +24,8 @@ public:
 		std::string filePath;
 		int numColumns;
 		int numRows;
+		float xScale;
+		float yScale;
 	};
 
 	virtual void Start(){};
@@ -32,6 +34,10 @@ public:
 	virtual void OnDestroyed(){};
 
 	void AnimationUpdate(Animation& animation, float deltaTime);
+
+	SpriteSheet sprite;
+	Animation anim;
+	Position position;
 	
 
 	bool pendingDelete = false;

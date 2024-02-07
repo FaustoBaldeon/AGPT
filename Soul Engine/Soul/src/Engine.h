@@ -7,8 +7,8 @@
 namespace Soul 
 {
 	class Engine {
-	public:
 
+	public:
 		Engine();
 
 		~Engine();
@@ -16,12 +16,6 @@ namespace Soul
 		void Initialize(const char* title, int width, int height);
 
 		void Run();
-
-		void HandleEvents();
-
-		void Render();
-
-		void StopRunning();
 
 		void Clean();
 		
@@ -37,25 +31,17 @@ namespace Soul
 	private:
 
 		static Engine* instance;
-
-
+		void HandleEvents(); 
+		void Render(); 
+		void StopRunning();
 		float previousTime = 0;
 		float currentTime = 0;
 		float frameTime = 0;
-
-
 		bool isRunning = false;
-
 		SDL_Window* window = nullptr;
-
 		SDL_Event event;
-
 		Renderer render;
-
 		Level currentLevel; 
-
-		
-
 	};
 
 }

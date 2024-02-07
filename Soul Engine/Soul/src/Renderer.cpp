@@ -2,7 +2,7 @@
 
 namespace Soul {
 
-
+/*
 	float vertices[] = {
 		// positions         // colors           // texture coords
 		0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,  
@@ -14,7 +14,7 @@ namespace Soul {
 	unsigned int indices[] = { 
 		0, 1, 3,   
 		1, 2, 3    
-	};
+	};*/
 
 	void Renderer::Init(SDL_Window* window)
 	{
@@ -24,7 +24,6 @@ namespace Soul {
 			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
 			SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-
 			
 			SDL_GLContext context = SDL_GL_CreateContext(window);
 
@@ -134,42 +133,40 @@ namespace Soul {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo); 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW); 
 
-		Shader shader(fragmentShaderSource,vertexShaderSource); 
+		shader = new Shader(fragmentShaderSource, vertexShaderSource); 
+		shader->Bind();
 
-		shader.VertexAttribPointer("position", 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float),(void*)0);
+		shader->VertexAttribPointer("position", 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float),(void*)0);
 
 		//--------------- remove text coord and change to uniforms ------------------
-		shader.VertexAttribPointer("texCoord", 2, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)(3*sizeof(float)));
+		shader->VertexAttribPointer("texCoord", 2, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)(3*sizeof(float)));
+		shader->SetUniformMat4f("model", modelMatrix);
 
-		//shader.SetUniformMat4f("projection", projectionMatrix);
-		//shader.SetUniformMat4f("model", modelMatrix);
-
-
-
-		//HARCODED FOR TEST ----------------------------------------------------------------------
-		unsigned int textText = LoadTexture("Assets/galaxy2.bmp");
-		glBindVertexArray(vao);
-		shader.Bind();
-		
-		shader.SetUniform1i("ourTexture", textText);
+		glBindVertexArray(vao); 
+		unsigned int textText = LoadTexture("Assets/galaxy2.bmp");	
+		shader->SetUniform1i("ourTexture", 0);
 
 
 	}
 
-	void Renderer::BackCol()
+	void Renderer::Draw(Level& currentLevel)
 	{
-		//std::cout<<"a"<<std::endl;
-
 		glClear(GL_COLOR_BUFFER_BIT); 
-		glClearColor(0.7f, 0.7f, 0.812f, 1.f);
-
+		glClearColor(0.7f, 0.7f, 0.812f, 1.f); 
 		glActiveTexture(GL_TEXTURE0); 
 
+		for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+		{
+			int currentTexture = LoadTexture(currentLevel.actorsLevel[i].sprite.filePath);
+			glBindTexture(GL_TEXTURE_2D, currentTexture);
+			UpdateModelMatrix(glm::vec2(currentLevel.actorsLevel[i].position.x, currentLevel.actorsLevel[i].position.y), 
+							glm::vec2(currentLevel.actorsLevel[i].sprite.xScale, currentLevel.actorsLevel[i].sprite.yScale));
+			SetCurrentTextCoords(currentLevel.actorsLevel[i].anim.currentFrame, currentLevel.actorsLevel[i].anim.totalFrames,
+				currentLevel.actorsLevel[i].sprite.numColumns, currentLevel.actorsLevel[i].sprite.numRows);
+			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-		glBindTexture(GL_TEXTURE_2D, textList[0].textureID);
+		}
 
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
-		
 	}
 
 	int Renderer::isImageLoaded(std::string filePath)
@@ -180,6 +177,14 @@ namespace Soul {
 				return textList[i].textureID;
 		}
 		return -1;
+	}
+
+	void Renderer::UpdateModelMatrix(glm::vec2 position, glm::vec2 scale)
+	{
+		modelMatrix = glm::mat4(1.f); 
+		modelMatrix = glm::translate(modelMatrix, glm::vec3(position, 0.f)); 
+		modelMatrix = glm::scale(modelMatrix, glm::vec3(scale, 1.0f)); 
+		shader->SetUniformMat4f("model", modelMatrix); 
 	}
 
 	void Renderer::SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows)
@@ -193,9 +198,10 @@ namespace Soul {
 		float currrentXTextCoord = col*frameWidth;
 		float nextXTextCoord = (col+1)*frameWidth;
 
-		float currentYTextCoord = 1.f- (row+1) * frameHeight;
-		float nextYTextCoord = 1.f - row*frameHeight;
+		float currentYTextCoord = 1.f- row * frameHeight;
+		float nextYTextCoord = 1.f - (row+1)*frameHeight;
 
+		//UNIFORMS SETUP
 
 	}
 

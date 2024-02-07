@@ -6,6 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "Level.h"
 
 
 namespace Soul {
@@ -17,16 +18,18 @@ namespace Soul {
 
 		unsigned int LoadTexture(std::string filePath);
 
-		void BackCol();
+		void Draw(Level& currentLevel);
 
 		void SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows);
 
 
 
-
 	private:
-		
+		Shader* shader;
+
 		void InitRenderData();
+
+		void UpdateModelMatrix(glm::vec2 position, glm::vec2 scale);
 
 		struct Texture{
 			unsigned int textureID;
@@ -37,12 +40,8 @@ namespace Soul {
 
 		std::vector<Texture>textList;
 
-		//glm::mat4 projectionMatrix = glm::ortho(0.0f, 640.0f, 640.0f, 0.0f, -1.0f, 1.0f); //maybe initialize with window sizes
-
-		//glm::mat4 modelMatrix = glm::mat4(1.0f);
+		glm::mat4 modelMatrix = glm::mat4(1.0f);
 		
-
-
 		const char* vertexShaderSource = R"glsl(
 		#version 330 core
 
@@ -52,14 +51,11 @@ namespace Soul {
 		out vec2 TexCoord;
 
 		uniform mat4 model;
-		uniform mat4 projection;
 
 		void main()
 		{
 			TexCoord = texCoord;
-			// gl_Position = model * vec4(position, 1.0);
-
-			gl_Position = vec4(position, 1.0);
+			gl_Position = model * vec4(position, 1.0);
 
 		}
 		)glsl";
@@ -95,5 +91,6 @@ namespace Soul {
 		})glsl";
 		
 	};
+	
 }
 

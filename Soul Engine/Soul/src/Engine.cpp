@@ -4,11 +4,8 @@ namespace Soul
 {
 	Engine* Engine::instance;
 
-	
-
 	void Engine::Initialize(const char* title, int width, int height)
 	{
-
 		//Initialize subsystems
 		SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER);
 		instance = this;
@@ -19,7 +16,6 @@ namespace Soul
 			return;
 		}
 		std::cout << "Subsystems initialized!" << std::endl;
-
 		//Create window
 		window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
 		if (window == nullptr) {
@@ -29,13 +25,10 @@ namespace Soul
 			return;
 		}
 		std::cout << "Window created!" << std::endl;
-
 		//Initialize Renderer
-		
 		render.Init(window);
 		//End init
 		std::cout << "Soul has started! \n" << std::endl;
-		
 	}
 
 	void Engine::Run() 
@@ -47,17 +40,9 @@ namespace Soul
 			currentTime = (float)SDL_GetTicks();
 			deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
-
 			frameTime += deltaTime;
 		
-
 			HandleEvents();
-
-			//GameWorld Refresh
-			//PhysWorld Update
-			//Game World Update
-
-			
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
@@ -71,7 +56,6 @@ namespace Soul
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
 				currentLevel.actorsLevel[i].OnUpdate();
-
 				//more update things
 			}
 
@@ -122,7 +106,7 @@ namespace Soul
 	void Engine::Render()
 	{
 
-		render.BackCol();
+		render.Draw(currentLevel);
 		SDL_GL_SwapWindow(window); 
 	}
 
