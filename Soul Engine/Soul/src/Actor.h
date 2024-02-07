@@ -14,18 +14,18 @@ public:
 	};
 
 	struct Animation {
-		int totalFrames;
-		float frameDuration;
-		float elapsedTime;
-		int currentFrame;
+		int totalFrames = 1;
+		float frameDuration = 0.1f;
+		float elapsedTime = 0.f;
+		int currentFrame = 1.f;
 	};
 
 	struct SpriteSheet {
 		std::string filePath;
 		int numColumns;
 		int numRows;
-		float xScale;
-		float yScale;
+		float xScale = 1.f;
+		float yScale = 1.f;
 	};
 
 	virtual void Start(){};
@@ -33,7 +33,7 @@ public:
 	virtual void OnCollisionEnter(Actor& collision){};
 	virtual void OnDestroyed(){};
 
-	void AnimationUpdate(Animation& animation, float deltaTime);
+	void AnimationUpdate(float deltaTime);
 
 	SpriteSheet sprite;
 	Animation anim;
@@ -44,7 +44,14 @@ public:
 
 	std::string objectType;
 
+	private:
+	void SetSpritesheetData(std::string filePath, int numColumns, int numRows, float scaleX, float scaleY);
+	void SetPosition(float positionX, float positionY);
+	void SetAnimationData(int totalFrames, float frameDuration);
 	
+
+	
+
 
 };
 

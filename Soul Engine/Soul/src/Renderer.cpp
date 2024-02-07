@@ -161,6 +161,7 @@ namespace Soul {
 			glBindTexture(GL_TEXTURE_2D, currentTexture);
 			UpdateModelMatrix(glm::vec2(currentLevel.actorsLevel[i].position.x, currentLevel.actorsLevel[i].position.y), 
 							glm::vec2(currentLevel.actorsLevel[i].sprite.xScale, currentLevel.actorsLevel[i].sprite.yScale));
+			//not yet bc does not has uniforms yet
 			SetCurrentTextCoords(currentLevel.actorsLevel[i].anim.currentFrame, currentLevel.actorsLevel[i].anim.totalFrames,
 				currentLevel.actorsLevel[i].sprite.numColumns, currentLevel.actorsLevel[i].sprite.numRows);
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

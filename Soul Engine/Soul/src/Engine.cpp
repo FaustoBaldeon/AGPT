@@ -56,6 +56,7 @@ namespace Soul
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
 				currentLevel.actorsLevel[i].OnUpdate();
+				currentLevel.actorsLevel[i].AnimationUpdate(deltaTime);
 				//more update things
 			}
 
