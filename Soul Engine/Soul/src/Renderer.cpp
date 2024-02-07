@@ -189,10 +189,8 @@ namespace Soul {
 		//std::cout << "framerow: " << row << std::endl;
 
 		float currrentXTextCoord = col*frameWidth;
-		float nextXTextCoord = ((col+1)%numColumns)*frameWidth;
 
 		float currentYTextCoord = 1.f- row * frameHeight;
-		float nextYTextCoord = 1.f - ((row+1)%numRows)*frameHeight;
 
 		//std::cout<<"currentxTextCoord:" << currrentXTextCoord << "totalFrames:" << totalFrames << std::endl;
 		//std::cout<<"currentYtextCoord:" << currentYTextCoord << "totalFrames:" << totalFrames << std::endl;
@@ -200,7 +198,6 @@ namespace Soul {
 		//UNIFORMS SETUP
 
 		shader->SetUniform2f("currentTexCoord",currrentXTextCoord,currentYTextCoord);
-		shader->SetUniform2f("texCoordNext", nextXTextCoord, nextYTextCoord);
 
 	}
 

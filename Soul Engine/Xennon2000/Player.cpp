@@ -22,8 +22,8 @@ void Player::OnKeyPressed(std::string keyPressed)
 
 void Player::Start()
 {
-	SetPosition(0.f, -.5f);
-	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .5f, .5f);
-	SetAnimationData(16, .1f);
+	SetPosition(0.f, .5f);
+	SetSpritesheetData("Assets/Rusher.bmp", 4, 6, .6f, .6f);
+	SetAnimationData(24, .05f);
 }
 
