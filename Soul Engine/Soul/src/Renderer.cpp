@@ -198,6 +198,7 @@ namespace Soul {
 		//UNIFORMS SETUP
 
 		shader->SetUniform2f("currentTexCoord",currrentXTextCoord,currentYTextCoord);
+		shader->SetUniform2f("spriteDimensions",frameWidth,frameHeight);
 
 	}
 

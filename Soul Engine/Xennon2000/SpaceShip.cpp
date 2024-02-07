@@ -2,12 +2,12 @@
 
 SpaceShip::SpaceShip(){
 	SetPosition(-0.f,-.5f);
-	SetSpritesheetData("Assets/LonerA.bmp", 4 , 4 , 1.f,1.f);
+	SetSpritesheetData("Assets/LonerA.bmp", 4 , 4 , .2f,.2f);
 	SetAnimationData(16,.1f);
 }
 
 void SpaceShip::OnUpdate()
 {
 	//std::cout << "update called on player" << std::endl;
-	//SetPosition(position.x+=movespeed, position.y);
+	SetPosition(position.x+=movespeed, position.y);
 }

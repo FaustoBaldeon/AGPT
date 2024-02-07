@@ -50,6 +50,7 @@ namespace Soul {
 		in vec2 texCoord;
 
 		uniform vec2 currentTexCoord;
+		uniform vec2 spriteDimensions;
 		
 		out vec2 TexCoord;
 
@@ -57,7 +58,7 @@ namespace Soul {
 
 		void main()
 		{
-			TexCoord = texCoord + currentTexCoord;
+			TexCoord = (texCoord * spriteDimensions) + currentTexCoord;
 			gl_Position = model * vec4(position, 1.0);
 
 		}

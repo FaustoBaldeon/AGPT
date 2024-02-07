@@ -1,5 +1,5 @@
-﻿  Player.cpp
+﻿  SpaceShip.cpp
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(21,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Player.cpp')
+  (compiling source file 'SpaceShip.cpp')
   
   Xennon2000.vcxproj -> C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\x64\Debug\Xennon2000.exe
