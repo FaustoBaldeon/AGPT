@@ -149,6 +149,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Pawn.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\Actor.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="vendor\glad\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Pawn.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Level.h" />
     <ClInclude Include="src\Actor.h" />

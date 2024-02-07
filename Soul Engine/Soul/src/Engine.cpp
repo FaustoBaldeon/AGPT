@@ -77,24 +77,29 @@ namespace Soul
 			else if (event.type == SDL_KEYDOWN) 
 			{
 				switch (event.key.keysym.sym) {
-				case SDLK_a:
-					std::cout << "The A key was pressed!" << std::endl;
+				case SDLK_a:		
+					key = "a";
+					UpdatePawnsInput(key);
 					break;
 
 				case SDLK_d:
-					std::cout << "The D key was pressed!" << std::endl;
+					key = "d";
+					UpdatePawnsInput(key);
 					break;
 
 				case SDLK_w:
-					std::cout << "The W key was pressed!" << std::endl;
+					key = "w";
+					UpdatePawnsInput(key);
 					break;
 
 				case SDLK_s:
-					std::cout << "The S key was pressed!" << std::endl;
+					key = "s";
+					UpdatePawnsInput(key);
 					break;
 
 				case SDLK_SPACE:
-					std::cout << "The Space Bar was pressed!" << std::endl;
+					key = "space";
+					UpdatePawnsInput(key);
 					break;
 
 				default:
@@ -132,6 +137,14 @@ namespace Soul
 	void Engine::SetLevel(Level& level)
 	{
 		currentLevel = level;
+	}
+
+	void Engine::UpdatePawnsInput(std::string keyPressed)
+	{
+		for (int i = 0; i < currentLevel.pawnsLevel.size(); ++i)
+		{
+			currentLevel.pawnsLevel[i]->OnKeyPressed(keyPressed);
+		}
 	}
 
 	Engine::Engine(){}

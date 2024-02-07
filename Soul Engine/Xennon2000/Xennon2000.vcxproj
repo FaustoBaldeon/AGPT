@@ -138,8 +138,21 @@
     <ClCompile Include="Application.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)Soul/vendor/glm/;$(SolutionDir)Soul/vendor/glad/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="Asteroids.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Companion.cpp" />
+    <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="EnemyProjectiles.cpp" />
+    <ClCompile Include="Loner.cpp" />
+    <ClCompile Include="MetalAsteroids.cpp" />
+    <ClCompile Include="Missiles.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PowerUps.cpp" />
+    <ClCompile Include="Rusher.cpp" />
+    <ClCompile Include="ShieldPowerUp.cpp" />
     <ClCompile Include="SpaceShip.cpp" />
+    <ClCompile Include="StoneAsteroids.cpp" />
+    <ClCompile Include="WeaponPowerUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Soul\Soul.vcxproj">
@@ -147,8 +160,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asteroids.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Companion.h" />
+    <ClInclude Include="Drone.h" />
+    <ClInclude Include="EnemyProjectiles.h" />
+    <ClInclude Include="Loner.h" />
+    <ClInclude Include="MetalAsteroids.h" />
+    <ClInclude Include="Missiles.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PowerUps.h" />
+    <ClInclude Include="Rusher.h" />
+    <ClInclude Include="ShieldPowerUp.h" />
     <ClInclude Include="SpaceShip.h" />
+    <ClInclude Include="StoneAsteroids.h" />
+    <ClInclude Include="WeaponPowerUp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -34,6 +34,7 @@ namespace Soul
 
 		static Engine* instance;
 		void HandleEvents(); 
+		void UpdatePawnsInput(std::string keyPressed);
 		void Render(); 
 		void StopRunning();
 		float previousTime = 0;
@@ -44,6 +45,7 @@ namespace Soul
 		SDL_Event event;
 		Renderer render;
 		Level currentLevel; 
+		std::string key = "";
 	};
 
 }
