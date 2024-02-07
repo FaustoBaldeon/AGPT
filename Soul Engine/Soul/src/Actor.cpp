@@ -10,6 +10,7 @@ Actor::~Actor()
 
 }
 
+
 void Actor::AnimationUpdate(float deltaTime) {
 	anim.elapsedTime += deltaTime;
 	if (anim.elapsedTime >= anim.frameDuration)

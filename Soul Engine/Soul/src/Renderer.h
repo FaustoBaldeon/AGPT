@@ -13,6 +13,7 @@ namespace Soul {
 	
 	class Renderer{
 	public:
+		~Renderer();
 
 		void Init(SDL_Window* window);
 
@@ -47,6 +48,8 @@ namespace Soul {
 
 		in vec3 position;
 		in vec2 texCoord;
+
+		uniform vec2 currentTexCoord;
 		
 		out vec2 TexCoord;
 
@@ -54,7 +57,7 @@ namespace Soul {
 
 		void main()
 		{
-			TexCoord = texCoord;
+			TexCoord = texCoord + currentTexCoord;
 			gl_Position = model * vec4(position, 1.0);
 
 		}
@@ -69,23 +72,23 @@ namespace Soul {
 
 		uniform sampler2D ourTexture;
 
-		/*
-			uniform vec2 texCoordNext;
+		uniform vec2 texCoordNext;
 
-		*/
+		
 
 		void main()
 		{
 
 			vec4 imageColor = texture(ourTexture, TexCoord);
 
-			// vec4 colorNext = texture(ourTexture, texCoordNext);
+			vec4 colorNext = texture(ourTexture, texCoordNext);
 
 			if(imageColor == vec4(1.0f,0.f,1.0f,1.0f))
 			discard;
+
 			outColor = imageColor;
 
-			// outColor = mix(imageColor, colorNext, fract(texCoordNext.x));
+			//outColor = mix(imageColor, colorNext, fract(texCoordNext.x));
 
 
 		})glsl";

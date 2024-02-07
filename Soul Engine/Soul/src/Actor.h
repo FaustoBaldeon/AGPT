@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class Actor
 {
@@ -44,7 +45,7 @@ public:
 
 	std::string objectType;
 
-	private:
+	protected:
 	void SetSpritesheetData(std::string filePath, int numColumns, int numRows, float scaleX, float scaleY);
 	void SetPosition(float positionX, float positionY);
 	void SetAnimationData(int totalFrames, float frameDuration);

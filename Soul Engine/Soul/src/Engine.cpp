@@ -43,20 +43,22 @@ namespace Soul
 			frameTime += deltaTime;
 		
 			HandleEvents();
+			//std::cout << "Actors in level:"<<currentLevel.actorsLevel.size()<<std::endl;
+
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
-				if (currentLevel.actorsLevel[i].pendingDelete == true)
+				if (currentLevel.actorsLevel[i]->pendingDelete == true)
 				{
-					currentLevel.actorsLevel[i].OnDestroyed();
+					currentLevel.actorsLevel[i]->OnDestroyed();
 					currentLevel.actorsLevel.erase(currentLevel.actorsLevel.begin()+i);
 				}
 			}
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
-				currentLevel.actorsLevel[i].OnUpdate();
-				currentLevel.actorsLevel[i].AnimationUpdate(deltaTime);
+				currentLevel.actorsLevel[i]->OnUpdate();
+				currentLevel.actorsLevel[i]->AnimationUpdate(deltaTime);
 				//more update things
 			}
 
@@ -125,6 +127,11 @@ namespace Soul
 			SDL_DestroyWindow(window); 
 			window = nullptr; 
 		};
+	}
+
+	void Engine::SetLevel(Level& level)
+	{
+		currentLevel = level;
 	}
 
 	Engine::Engine(){}

@@ -23,7 +23,9 @@ namespace Soul
 
 		static Engine* getEngine() { return instance; }
 
-		Level& getLevel(){return currentLevel;}
+		//Level* getLevel(){return &currentLevel;}
+
+		void SetLevel(Level& level);
 
 		float deltaTime = 0;
 	
