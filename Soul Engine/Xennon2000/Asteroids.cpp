@@ -1,9 +1,5 @@
 #include "Asteroids.h"
 
-void Asteroids::Start()
-{
-	objectType = "asteroid";
-}
 
 void Asteroids::OnUpdate()
 {

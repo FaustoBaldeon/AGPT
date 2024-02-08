@@ -10,6 +10,9 @@
 #include "MetalAsteroids.h"
 #include "SMetalAsteroid.h";
 #include "MMetalAsteroid.h"
+#include "StoneAsteroids.h"
+#include "SStoneAsteroid.h"
+#include "MStoneAsteroid.h"
 
 using namespace Soul;
 
@@ -39,6 +42,12 @@ int main(int argc, char** argv)
 
 	MMetalAsteroid* MMATest = new MMetalAsteroid;
 
+	StoneAsteroids* SATest = new StoneAsteroids;
+
+	SStoneAsteroid* SSATest = new SStoneAsteroid;
+
+	MStoneAsteroid* MSATest = new MStoneAsteroid; 
+
 	currentLevel.AddActor(background);
 	currentLevel.AddActor(background2); 
 
@@ -46,9 +55,13 @@ int main(int argc, char** argv)
 	currentLevel.AddActor(LonerTest);
 	currentLevel.AddActor(RusherTest);
 	currentLevel.AddActor(DroneTest);
+
 	currentLevel.AddActor(MAtest);
 	currentLevel.AddActor(SMATest);
 	currentLevel.AddActor(MMATest);
+	currentLevel.AddActor(SATest);
+	currentLevel.AddActor(SSATest);
+	currentLevel.AddActor(MSATest);
 
 
 	engine.SetLevel(currentLevel);
@@ -66,7 +79,9 @@ int main(int argc, char** argv)
 	delete MAtest;
 	delete SMATest;
 	delete MMATest;
-
+	delete SATest;
+	delete SSATest;
+	delete MSATest; 
 
 	return 0;
 }
