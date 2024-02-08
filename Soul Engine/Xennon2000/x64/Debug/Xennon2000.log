@@ -1,10 +1,14 @@
-﻿  Loner.cpp
-C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(21,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Loner.cpp')
+﻿  Application.cpp
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(22,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Application.cpp')
   
-  Rusher.cpp
-C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(21,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Rusher.cpp')
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Drone.h(11,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'Application.cpp')
   
-  Generating Code...
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Application.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MMetalAsteroid.cpp
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(22,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'MMetalAsteroid.cpp')
+  
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\MMetalAsteroid.cpp(12,14): warning C4305: '=': truncation from 'double' to 'float'
   Xennon2000.vcxproj -> C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\x64\Debug\Xennon2000.exe

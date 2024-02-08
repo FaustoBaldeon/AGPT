@@ -6,5 +6,11 @@ class Asteroids :
 public:
 	void Start() override;
 	void OnUpdate() override;
+
+protected:
+	float moveSpeed = 0.025f;
+	float scaleX = .5f;
+	float scaleY = .5f;
+	float animDuration = .1f;
 };
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
 
 class Actor
 {
@@ -36,7 +37,7 @@ public:
 
 	void AnimationUpdate(float deltaTime);
 
-	void UpdateTime(float currentdTime);
+	void UpdateTime(float currentdTime, float currentTime);
 
 	SpriteSheet sprite;
 	Animation anim;
@@ -47,6 +48,7 @@ public:
 
 	std::string objectType;
 	float dTime = 0.f;
+	float sTime = 0.f;
 
 	virtual void SetInitialPosition(float xpos, float ypos);
 

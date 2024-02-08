@@ -7,8 +7,7 @@ void Loner::Start()
 	//--------------------------------
 	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .2f, .2f);
 	SetAnimationData(16, .1f);
-	objectType = "enemy";
-	currentHealth = totalHealth;
+	Enemy::Start();
 }
 void Loner::OnUpdate() 
 {
@@ -42,13 +41,4 @@ void Loner::Shoot()
 void Loner::SetLevel(Level& level) 
 {
 	currentLevel = level;
-}
-
-void Loner::GetDamage(float damage)
-{
-	currentHealth -= damage;
-	if (currentHealth <= 0.f)
-	{
-		Destroy();
-	}
 }

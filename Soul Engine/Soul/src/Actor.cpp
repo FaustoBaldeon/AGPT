@@ -41,9 +41,10 @@ void Actor::SetSpritesheetData(std::string filePath, int numColumns, int numRows
 	sprite.yScale = scaleY;
 }
 
-void Actor::UpdateTime(float currentdTime)
+void Actor::UpdateTime(float currentdTime, float currentTime)
 {
 	dTime = currentdTime;
+	sTime = currentTime;
 }
 
 void Actor::Destroy()

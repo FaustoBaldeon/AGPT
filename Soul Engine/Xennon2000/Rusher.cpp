@@ -7,16 +7,7 @@ void Rusher::Start()
 	//--------------------------------
 	SetSpritesheetData("Assets/rusher.bmp", 4, 6, .15f,.15f);
 	SetAnimationData(24,.05f);
-	currentHealth = totalHealth;
-}
-
-void Rusher::GetDamage(float damage)
-{
-	currentHealth-=damage;
-	if (currentHealth <= 0.f)
-	{
-		Destroy();
-	}
+	Enemy::Start();
 }
 
 void Rusher::OnUpdate()

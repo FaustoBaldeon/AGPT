@@ -62,7 +62,7 @@ namespace Soul
 				Actor* currentActor = currentLevel.actorsLevel[i];
 				currentActor->OnUpdate();
 				currentActor->AnimationUpdate(deltaTime);
-				currentActor->UpdateTime(deltaTime);
+				currentActor->UpdateTime(deltaTime, frameTime);
 
 			}
 

@@ -1,9 +1,9 @@
 #pragma once
-#include "Actor.h"
+#include "Enemy.h"
 #include "EnemyProjectiles.h"
 #include "Level.h"
 
-class Loner : public Actor
+class Loner : public Enemy
 {	
 public:
 	void Start() override;
@@ -15,15 +15,12 @@ public:
 
 
 private:
-	float moveSpeed = .001f;
+	float moveSpeed = .0015f;
+
 	Level currentLevel;
 	float shootPosOffset = .1f;
 	float timeToShoot = 2.f;
 	float elapsedTimeToShoot = 0.f;
 	Position shootPos;
-	float totalHealth = 100.f;
-	float currentHealth = 0.f;
-	void GetDamage(float damage);
-	
 };
 
