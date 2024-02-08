@@ -36,6 +36,8 @@ public:
 
 	void AnimationUpdate(float deltaTime);
 
+	void UpdateTime(float currentdTime);
+
 	SpriteSheet sprite;
 	Animation anim;
 	Position position;
@@ -44,11 +46,17 @@ public:
 	bool pendingDelete = false;
 
 	std::string objectType;
+	float dTime = 0.f;
+
+	virtual void SetInitialPosition(float xpos, float ypos);
 
 	protected:
 	void SetSpritesheetData(std::string filePath, int numColumns, int numRows, float scaleX, float scaleY);
 	void SetPosition(float positionX, float positionY);
 	void SetAnimationData(int totalFrames, float frameDuration);
+	void Destroy();
+
+
 	
 
 	

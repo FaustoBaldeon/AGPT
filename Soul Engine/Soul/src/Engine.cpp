@@ -41,9 +41,11 @@ namespace Soul
 			deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
 			frameTime += deltaTime;
+
+			//std::cout << frameTime << std::endl;
 		
 			HandleEvents();
-			//std::cout << "Actors in level:"<<currentLevel.actorsLevel.size()<<std::endl;
+			
 
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
@@ -57,9 +59,11 @@ namespace Soul
 
 			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
 			{
-				currentLevel.actorsLevel[i]->OnUpdate();
-				currentLevel.actorsLevel[i]->AnimationUpdate(deltaTime);
-				//more update things
+				Actor* currentActor = currentLevel.actorsLevel[i];
+				currentActor->OnUpdate();
+				currentActor->AnimationUpdate(deltaTime);
+				currentActor->UpdateTime(deltaTime);
+
 			}
 
 

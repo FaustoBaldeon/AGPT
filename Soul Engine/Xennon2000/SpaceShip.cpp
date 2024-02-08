@@ -2,7 +2,7 @@
 
 SpaceShip::SpaceShip(){
 	SetPosition(-0.f,-.5f);
-	SetSpritesheetData("Assets/LonerA.bmp", 4 , 4 , .2f,.2f);
+	SetSpritesheetData("Assets/LonerB.bmp", 4 , 4 , .2f,.2f);
 	SetAnimationData(16,.1f);
 }
 

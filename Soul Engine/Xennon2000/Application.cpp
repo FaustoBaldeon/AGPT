@@ -3,6 +3,9 @@
 #include "Background.h"
 #include "SpaceShip.h"
 #include "Player.h"
+#include "Loner.h"
+#include "Rusher.h"
+#include "EnemyProjectiles.h"
 
 using namespace Soul;
 
@@ -16,16 +19,20 @@ int main(int argc, char** argv)
 	Level currentLevel;
 
 	Background* background = new Background;
+	Background* background2 = new Background;
+	background2->SetInitialPosition(0.f,2.f);
 
-	SpaceShip* player = new SpaceShip;
 
-	Player* testing = new Player;
+	Loner* LonerTest = new Loner;
+
+	Rusher* RusherTest = new Rusher;
 
 	currentLevel.AddActor(background);
-	currentLevel.AddActor(player);
-	currentLevel.AddActor(testing);
+	currentLevel.AddActor(background2); 
 
-	currentLevel.AddPawn(testing);
+
+	currentLevel.AddActor(LonerTest);
+	currentLevel.AddActor(RusherTest);
 
 	engine.SetLevel(currentLevel);
 
@@ -33,9 +40,11 @@ int main(int argc, char** argv)
 
 	engine.Clean();
 
-	delete player;
+
 	delete background; 
-	delete testing;
+	delete background2; 
+	delete LonerTest;
+	delete RusherTest;
 
 	return 0;
 }

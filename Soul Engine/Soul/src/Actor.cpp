@@ -40,3 +40,18 @@ void Actor::SetSpritesheetData(std::string filePath, int numColumns, int numRows
 	sprite.xScale = scaleX;
 	sprite.yScale = scaleY;
 }
+
+void Actor::UpdateTime(float currentdTime)
+{
+	dTime = currentdTime;
+}
+
+void Actor::Destroy()
+{
+	pendingDelete = true;
+}
+
+void Actor::SetInitialPosition(float xpos, float ypos)
+{
+	SetPosition(xpos, ypos);
+}
