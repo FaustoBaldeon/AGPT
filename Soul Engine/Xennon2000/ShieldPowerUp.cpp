@@ -8,10 +8,6 @@ void ShieldPowerUp::Start()
 	
 	SetSpritesheetData("Assets/PUShield.bmp", 4, 2, xScale,yScale);
 	SetAnimationData(8, .1f);
-
-
-	//-------- test ----------
-	SetPosition (.75f, .75f);
 }
 
 void ShieldPowerUp::OnCollisionEnter(Actor& actor)

@@ -2,9 +2,6 @@
 
 void MStoneAsteroid::Start()
 {
-	//testing
-	SetPosition(.15f, 1.1f);
-	//--------------------------------
 	objectType = "stoneasteroid";
 	currentHealth = maxHealth;
 	scaleX = .2f;

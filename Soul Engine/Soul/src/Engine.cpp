@@ -45,8 +45,6 @@ namespace Soul
 			
 		
 			HandleEvents();
-			
-			std::cout << currentLevel->actorsLevel.size() << std::endl;
 
 			for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)
 			{

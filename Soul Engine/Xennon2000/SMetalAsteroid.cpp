@@ -2,9 +2,6 @@
 
 void SMetalAsteroid::Start()
 {
-	//testing
-	SetPosition(.5f, 1.1f);
-	//--------------------------------
 	objectType = "metalasteroid";
 	scaleX = .1f;
 	scaleY = .1f;

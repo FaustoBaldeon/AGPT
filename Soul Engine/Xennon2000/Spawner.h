@@ -1,7 +1,6 @@
 #pragma once
 #include "Actor.h"
 #include "Level.h"
-#include "Loner.h"
 
 class Spawner : public Actor
 {

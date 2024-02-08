@@ -4,9 +4,9 @@ C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Backgr
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Companion.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Companion.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Drone.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Drone.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Enemy.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Enemy.obj
-C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\EnemyProjectiles.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\EnemyProjectiles.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\EnemySpawner.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\EnemySpawner.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Loner.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Loner.obj
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\LonerSpawner.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\LonerSpawner.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\MetalAsteroids.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\MetalAsteroids.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Missiles.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Missiles.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\MMetalAsteroid.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\MMetalAsteroid.obj
@@ -14,9 +14,9 @@ C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\MStone
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Player.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Player.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\PowerUps.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\PowerUps.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Rusher.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Rusher.obj
+C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\RusherSpawner.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\RusherSpawner.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\ShieldPowerUp.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\ShieldPowerUp.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\SMetalAsteroid.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\SMetalAsteroid.obj
-C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\SpaceShip.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\SpaceShip.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Spawner.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\Spawner.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\SStoneAsteroid.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\SStoneAsteroid.obj
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\StoneAsteroids.cpp;C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\x64\Debug\StoneAsteroids.obj

@@ -2,9 +2,6 @@
 
 void Loner::Start()
 {
-	//testing
-	//SetPosition(-1.f, 0.f);
-	//--------------------------------
 	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .2f, .2f);
 	SetAnimationData(16, .1f);
 	Enemy::Start();
@@ -30,13 +27,6 @@ void Loner::Shoot()
 		elapsedTimeToShoot = 0.f;
 		std::cout << "Shoot" << std::endl;
 	}
-
-/*
-	EnemyProjectiles* bullet = new EnemyProjectiles;
-	bullet->position.x = shootPos.x;
-	bullet->position.y = shootPos.y;
-	currentLevel.AddActor(bullet);
-*/
 }
 void Loner::SetLevel(Level* level) 
 {
