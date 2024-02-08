@@ -3,7 +3,7 @@
 void Loner::Start()
 {
 	//testing
-	SetPosition(-1.f, 0.f);
+	//SetPosition(-1.f, 0.f);
 	//--------------------------------
 	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .2f, .2f);
 	SetAnimationData(16, .1f);
@@ -38,7 +38,7 @@ void Loner::Shoot()
 	currentLevel.AddActor(bullet);
 */
 }
-void Loner::SetLevel(Level& level) 
+void Loner::SetLevel(Level* level) 
 {
 	currentLevel = level;
 }

@@ -9,9 +9,7 @@ namespace Soul
 	class Engine {
 
 	public:
-		Engine();
 
-		~Engine();
 
 		void Initialize(const char* title, int width, int height);
 
@@ -25,7 +23,7 @@ namespace Soul
 
 		//Level* getLevel(){return &currentLevel;}
 
-		void SetLevel(Level& level);
+		void SetLevel(Level* level);
 
 		float deltaTime = 0;
 	
@@ -44,7 +42,7 @@ namespace Soul
 		SDL_Window* window = nullptr;
 		SDL_Event event;
 		Renderer render;
-		Level currentLevel; 
+		Level* currentLevel; 
 		std::string key = "";
 	};
 

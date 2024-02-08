@@ -137,21 +137,21 @@ namespace Soul {
 
 	}
 
-	void Renderer::Draw(Level& currentLevel)
+	void Renderer::Draw(Level*currentLevel)
 	{
 		glClear(GL_COLOR_BUFFER_BIT); 
 		glClearColor(0.7f, 0.7f, 0.812f, 1.f); 
 		glActiveTexture(GL_TEXTURE0); 
 
-		for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+		for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)
 		{
-			int currentTexture = LoadTexture(currentLevel.actorsLevel[i]->sprite.filePath);
+			int currentTexture = LoadTexture(currentLevel->actorsLevel[i]->sprite.filePath);
 			glBindTexture(GL_TEXTURE_2D, currentTexture);
-			UpdateModelMatrix(glm::vec2(currentLevel.actorsLevel[i]->position.x, currentLevel.actorsLevel[i]->position.y),
-							glm::vec2(currentLevel.actorsLevel[i]->sprite.xScale, currentLevel.actorsLevel[i]->sprite.yScale));
+			UpdateModelMatrix(glm::vec2(currentLevel->actorsLevel[i]->position.x, currentLevel->actorsLevel[i]->position.y),
+							glm::vec2(currentLevel->actorsLevel[i]->sprite.xScale, currentLevel->actorsLevel[i]->sprite.yScale));
 			//not yet bc does not has uniforms yet
-			SetCurrentTextCoords(currentLevel.actorsLevel[i]->anim.currentFrame, currentLevel.actorsLevel[i]->anim.totalFrames,
-				currentLevel.actorsLevel[i]->sprite.numColumns, currentLevel.actorsLevel[i]->sprite.numRows);
+			SetCurrentTextCoords(currentLevel->actorsLevel[i]->anim.currentFrame, currentLevel->actorsLevel[i]->anim.totalFrames,
+				currentLevel->actorsLevel[i]->sprite.numColumns, currentLevel->actorsLevel[i]->sprite.numRows);
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		}

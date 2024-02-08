@@ -144,6 +144,7 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyProjectiles.cpp" />
+    <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="Loner.cpp" />
     <ClCompile Include="MetalAsteroids.cpp" />
     <ClCompile Include="Missiles.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="ShieldPowerUp.cpp" />
     <ClCompile Include="SMetalAsteroid.cpp" />
     <ClCompile Include="SpaceShip.cpp" />
+    <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="SStoneAsteroid.cpp" />
     <ClCompile Include="StoneAsteroids.cpp" />
     <ClCompile Include="WeaponPowerUp.cpp" />
@@ -171,6 +173,7 @@
     <ClInclude Include="Drone.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyProjectiles.h" />
+    <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="Loner.h" />
     <ClInclude Include="MetalAsteroids.h" />
     <ClInclude Include="Missiles.h" />
@@ -182,6 +185,7 @@
     <ClInclude Include="ShieldPowerUp.h" />
     <ClInclude Include="SMetalAsteroid.h" />
     <ClInclude Include="SpaceShip.h" />
+    <ClInclude Include="Spawner.h" />
     <ClInclude Include="SStoneAsteroid.h" />
     <ClInclude Include="StoneAsteroids.h" />
     <ClInclude Include="WeaponPowerUp.h" />

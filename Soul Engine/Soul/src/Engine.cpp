@@ -42,24 +42,24 @@ namespace Soul
 			previousTime = currentTime;
 			frameTime += deltaTime;
 
-			//std::cout << frameTime << std::endl;
+			
 		
 			HandleEvents();
 			
+			std::cout << currentLevel->actorsLevel.size() << std::endl;
 
-
-			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+			for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)
 			{
-				if (currentLevel.actorsLevel[i]->pendingDelete == true)
+				if (currentLevel->actorsLevel[i]->pendingDelete == true)
 				{
-					currentLevel.actorsLevel[i]->OnDestroyed();
-					currentLevel.actorsLevel.erase(currentLevel.actorsLevel.begin()+i);
+					currentLevel->actorsLevel[i]->OnDestroyed();
+					currentLevel->actorsLevel.erase(currentLevel->actorsLevel.begin()+i);
 				}
 			}
 
-			for (int i = 0; i < currentLevel.actorsLevel.size(); ++i)
+			for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)
 			{
-				Actor* currentActor = currentLevel.actorsLevel[i];
+				Actor* currentActor = currentLevel->actorsLevel[i];
 				currentActor->OnUpdate();
 				currentActor->AnimationUpdate(deltaTime);
 				currentActor->UpdateTime(deltaTime, frameTime);
@@ -138,20 +138,17 @@ namespace Soul
 		};
 	}
 
-	void Engine::SetLevel(Level& level)
+	void Engine::SetLevel(Level* level)
 	{
 		currentLevel = level;
 	}
 
 	void Engine::UpdatePawnsInput(std::string keyPressed)
 	{
-		for (int i = 0; i < currentLevel.pawnsLevel.size(); ++i)
+		for (int i = 0; i < currentLevel->pawnsLevel.size(); ++i)
 		{
-			currentLevel.pawnsLevel[i]->OnKeyPressed(keyPressed);
-		}
+			currentLevel->pawnsLevel[i]->OnKeyPressed(keyPressed);
 	}
 
-	Engine::Engine(){}
-
-	Engine::~Engine(){}
+}
 }

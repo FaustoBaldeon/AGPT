@@ -5,10 +5,9 @@
 #include "Player.h"
 #include "Loner.h"
 #include "Rusher.h"
-#include "EnemyProjectiles.h"
 #include "Drone.h"
 #include "MetalAsteroids.h"
-#include "SMetalAsteroid.h";
+#include "SMetalAsteroid.h"
 #include "MMetalAsteroid.h"
 #include "StoneAsteroids.h"
 #include "SStoneAsteroid.h"
@@ -16,6 +15,8 @@
 #include "Companion.h"
 #include "ShieldPowerUp.h"
 #include "WeaponPowerUp.h"
+
+#include "Spawner.h"
 
 using namespace Soul;
 
@@ -27,12 +28,13 @@ int main(int argc, char** argv)
 	engine.Initialize("Xenon2000", 640, 640);
 
 	Level currentLevel;
+	Level* levelptr = &currentLevel; 
 
 	Background* background = new Background;
 	Background* background2 = new Background;
 	background2->SetInitialPosition(0.f,2.f);
 
-
+	/*
 	Loner* LonerTest = new Loner;
 	Rusher* RusherTest = new Rusher;
 	Drone* DroneTest = new Drone;
@@ -48,11 +50,24 @@ int main(int argc, char** argv)
 
 	ShieldPowerUp* ShieldPUTest = new ShieldPowerUp;
 	WeaponPowerUp* WeaponPUTest = new WeaponPowerUp;
+	*/
+
+	Player* player = new Player;
+
+	Spawner* spawner = new Spawner; 
+	spawner->SetInitialPosition(0.5f,0.5f);
+	spawner->SetLevel(levelptr); 
+	spawner->timeToSpawn = 3.f; 
+
+	player->SetLevel(levelptr);
 
 	currentLevel.AddActor(background);
 	currentLevel.AddActor(background2); 
+	currentLevel.AddActor(player);
+	currentLevel.AddPawn(player);
 
-
+	currentLevel.AddActor(spawner);
+	/*
 	currentLevel.AddActor(LonerTest);
 	currentLevel.AddActor(RusherTest);
 	currentLevel.AddActor(DroneTest);
@@ -68,8 +83,10 @@ int main(int argc, char** argv)
 
 	currentLevel.AddActor(ShieldPUTest);
 	currentLevel.AddActor(WeaponPUTest);
+	*/
 
-	engine.SetLevel(currentLevel);
+
+	engine.SetLevel(levelptr);
 
 	engine.Run();
 
@@ -78,6 +95,7 @@ int main(int argc, char** argv)
 
 	delete background; 
 	delete background2; 
+	/*
 	delete LonerTest;
 	delete RusherTest;
 	delete DroneTest;
@@ -89,7 +107,10 @@ int main(int argc, char** argv)
 	delete MSATest; 
 	delete CompanionTest;
 	delete ShieldPUTest;
-	delete WeaponPUTest;
+	delete WeaponPUTest;*/
+	delete player;
+	delete spawner;
+
 
 	return 0;
 }

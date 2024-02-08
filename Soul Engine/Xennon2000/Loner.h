@@ -11,13 +11,13 @@ public:
 	void SetInitialPosition(float xpos, float ypos) override;
 	void Shoot();
 
-	void SetLevel(Level& level);
+	void SetLevel(Level* level);
 
 
 private:
 	float moveSpeed = .15f;
 
-	Level currentLevel;
+	Level* currentLevel;
 	float shootPosOffset = .1f;
 	float timeToShoot = 2.f;
 	float elapsedTimeToShoot = 0.f;

@@ -19,7 +19,7 @@ public:
 		int totalFrames = 1;
 		float frameDuration = 0.1f;
 		float elapsedTime = 0.f;
-		int currentFrame = 1.f;
+		int currentFrame = 1;
 	};
 
 	struct SpriteSheet {

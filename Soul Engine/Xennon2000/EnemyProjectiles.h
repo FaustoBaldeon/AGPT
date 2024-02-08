@@ -3,10 +3,13 @@
 class EnemyProjectiles : public Actor
 {
 public:
-    void Start() override;
-    void OnUpdate() override;
-    EnemyProjectiles();
+	void Start() override;
+	void OnUpdate() override;
+	void OnCollisionEnter(Actor& actor);
+
 private:
-    float speed = .001f;
+	float damage = 25.f;
+	float speed = .1f;
+
 };
 

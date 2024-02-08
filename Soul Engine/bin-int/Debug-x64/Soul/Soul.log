@@ -1,5 +1,2 @@
-﻿  Level.cpp
-C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Soul\src\Actor.h(22,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'src/Level.cpp')
-  
+﻿  Engine.cpp
   Soul.vcxproj -> C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\bin\Debug-x64\Soul\Soul.lib

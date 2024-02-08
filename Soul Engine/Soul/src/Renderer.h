@@ -19,7 +19,7 @@ namespace Soul {
 
 		unsigned int LoadTexture(std::string filePath);
 
-		void Draw(Level& currentLevel);
+		void Draw(Level* currentLevel);
 
 		void SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows);
 

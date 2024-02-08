@@ -33,9 +33,6 @@
     <ClCompile Include="Loner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyProjectiles.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Rusher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -78,6 +75,15 @@
     <ClCompile Include="MStoneAsteroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyProjectiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySpawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h">
@@ -93,9 +99,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Loner.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyProjectiles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rusher.h">
@@ -138,6 +141,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MStoneAsteroid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyProjectiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySpawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
