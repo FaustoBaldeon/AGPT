@@ -184,16 +184,9 @@ namespace Soul {
 		int row = currentFrame/numColumns;
 		int col = currentFrame%numColumns;
 
-		//std::cout << "framecol: " << col << std::endl;
-
-		//std::cout << "framerow: " << row << std::endl;
-
 		float currrentXTextCoord = col*frameWidth;
 
 		float currentYTextCoord = 1.f- row * frameHeight;
-
-		//std::cout<<"currentxTextCoord:" << currrentXTextCoord << "totalFrames:" << totalFrames << std::endl;
-		//std::cout<<"currentYtextCoord:" << currentYTextCoord << "totalFrames:" << totalFrames << std::endl;
 
 		//UNIFORMS SETUP
 

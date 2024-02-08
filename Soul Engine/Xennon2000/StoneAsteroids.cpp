@@ -10,7 +10,7 @@ void StoneAsteroids::Start()
 	objectType = "metalasteroid";
 	SetSpritesheetData("Assets/SAster96.bmp", 5, 5, scaleX, scaleY);
 	SetAnimationData(25, animDuration);
-	moveSpeed = 0.002;
+	moveSpeed = .2f;
 }
 
 

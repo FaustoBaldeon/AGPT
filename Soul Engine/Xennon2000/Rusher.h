@@ -8,6 +8,6 @@ public:
     void OnUpdate() override;
 
 private:
-    float moveSpeed = .0025f;
+    float moveSpeed = .25f;
 };
 

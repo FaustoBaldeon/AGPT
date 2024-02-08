@@ -8,7 +8,7 @@ public:
 	void SinMovementUpdate();
 
 private:
-	float moveSpeed = 0.0035;
+	float moveSpeed = 0.35f;
 
 	float xSinOffset = 0.f;
 	float elapsedMovementTime = 0.f;

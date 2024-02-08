@@ -4,6 +4,10 @@ class Companion : public Actor
 {
 public:
 	void Start() override;
-	void OnUpdate() override;
+
+	void Shoot();
+
+private:
+	Position shootPosition;
 };
 

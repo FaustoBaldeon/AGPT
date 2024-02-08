@@ -15,7 +15,7 @@ public:
 
 
 private:
-	float moveSpeed = .0015f;
+	float moveSpeed = .15f;
 
 	Level currentLevel;
 	float shootPosOffset = .1f;

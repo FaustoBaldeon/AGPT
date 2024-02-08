@@ -12,5 +12,5 @@ void Rusher::Start()
 
 void Rusher::OnUpdate()
 {
-	SetPosition(position.x , position.y -= moveSpeed);
+	SetPosition(position.x , position.y -= moveSpeed*dTime);
 }

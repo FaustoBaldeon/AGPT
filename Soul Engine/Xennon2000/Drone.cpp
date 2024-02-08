@@ -13,7 +13,7 @@ void Drone::Start()
 void Drone::OnUpdate()
 {
 	SinMovementUpdate();
-	SetPosition(sin(position.x+xSinOffset), position.y -= moveSpeed);
+	SetPosition(sin(position.x+xSinOffset), position.y -= moveSpeed*dTime);
 }
 
 void Drone::SinMovementUpdate()
@@ -21,11 +21,11 @@ void Drone::SinMovementUpdate()
 	elapsedMovementTime += dTime;
 	if (directionFlag == true) 
 	{
-		xSinOffset = sin(moveSpeed * elapsedMovementTime); 
+		xSinOffset = sin(moveSpeed * dTime * elapsedMovementTime);
 	}
 	else if(directionFlag == false)
 	{
-		xSinOffset = sin( -moveSpeed * elapsedMovementTime);
+		xSinOffset = sin( -moveSpeed * dTime * elapsedMovementTime);
 	}
 	if (elapsedMovementTime >= maxMovementTime)
 	{

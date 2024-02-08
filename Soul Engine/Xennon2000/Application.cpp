@@ -13,6 +13,9 @@
 #include "StoneAsteroids.h"
 #include "SStoneAsteroid.h"
 #include "MStoneAsteroid.h"
+#include "Companion.h"
+#include "ShieldPowerUp.h"
+#include "WeaponPowerUp.h"
 
 using namespace Soul;
 
@@ -31,22 +34,20 @@ int main(int argc, char** argv)
 
 
 	Loner* LonerTest = new Loner;
-
 	Rusher* RusherTest = new Rusher;
-
 	Drone* DroneTest = new Drone;
 
 	MetalAsteroids* MAtest = new MetalAsteroids;
-
 	SMetalAsteroid* SMATest = new SMetalAsteroid;
-
 	MMetalAsteroid* MMATest = new MMetalAsteroid;
-
 	StoneAsteroids* SATest = new StoneAsteroids;
-
 	SStoneAsteroid* SSATest = new SStoneAsteroid;
-
 	MStoneAsteroid* MSATest = new MStoneAsteroid; 
+
+	Companion* CompanionTest = new Companion;
+
+	ShieldPowerUp* ShieldPUTest = new ShieldPowerUp;
+	WeaponPowerUp* WeaponPUTest = new WeaponPowerUp;
 
 	currentLevel.AddActor(background);
 	currentLevel.AddActor(background2); 
@@ -63,6 +64,10 @@ int main(int argc, char** argv)
 	currentLevel.AddActor(SSATest);
 	currentLevel.AddActor(MSATest);
 
+	currentLevel.AddActor(CompanionTest);
+
+	currentLevel.AddActor(ShieldPUTest);
+	currentLevel.AddActor(WeaponPUTest);
 
 	engine.SetLevel(currentLevel);
 
@@ -82,6 +87,9 @@ int main(int argc, char** argv)
 	delete SATest;
 	delete SSATest;
 	delete MSATest; 
+	delete CompanionTest;
+	delete ShieldPUTest;
+	delete WeaponPUTest;
 
 	return 0;
 }
