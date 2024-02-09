@@ -2,7 +2,7 @@
 
 void Rusher::Start()
 {
-	SetSpritesheetData("Assets/rusher.bmp", 4, 6, .15f,.15f);
+	SetSpritesheetData("Assets/rusher.bmp", 4, 6, .12f,.12f);
 	SetAnimationData(24,.05f);
 	Enemy::Start();
 }

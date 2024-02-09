@@ -4,7 +4,7 @@
 #include "Player.h"
 #include "LonerSpawner.h"
 #include "RusherSpawner.h"
-#include "Missiles.h"
+#include "DroneSpawner.h"
 
 using namespace Soul;
 
@@ -24,15 +24,20 @@ int main(int argc, char** argv)
 
 	Player* player = new Player;
 
-	LonerSpawner* spawner = new LonerSpawner; 
-	spawner->SetInitialPosition(-1.1f,0.5f);
-	spawner->SetLevel(levelptr); 
-	spawner->timeToSpawn = 3.f;   
+	LonerSpawner* lonerSpawner = new LonerSpawner; 
+	lonerSpawner->SetInitialPosition(-1.1f,0.f);
+	lonerSpawner->SetLevel(levelptr); 
+	lonerSpawner->timeToSpawn = 5.f;   
 
 	RusherSpawner* rushSpawn = new RusherSpawner;
 	rushSpawn->SetInitialPosition(0.f,1.1f);
 	rushSpawn->SetLevel(levelptr);
-	rushSpawn->timeToSpawn = 5.f;
+	rushSpawn->timeToSpawn = 7.f;
+
+	DroneSpawner* droneSpawn = new DroneSpawner;
+	droneSpawn->SetInitialPosition(0.f,1.1f);
+	droneSpawn->SetLevel(levelptr);
+	droneSpawn->timeToSpawn = 10.f;
 
 	player->SetLevel(levelptr);
 
@@ -42,8 +47,9 @@ int main(int argc, char** argv)
 
 	currentLevel.AddPawn(player);
 
-	currentLevel.AddActor(spawner);
+	currentLevel.AddActor(lonerSpawner);
 	currentLevel.AddActor(rushSpawn);
+	currentLevel.AddActor(droneSpawn);
 
 	engine.SetLevel(levelptr);
 
@@ -55,8 +61,9 @@ int main(int argc, char** argv)
 	delete background; 
 	delete background2; 
 	delete player;
-	delete spawner;
+	delete lonerSpawner;
 	delete rushSpawn;
+	delete droneSpawn;
 
 
 	return 0;

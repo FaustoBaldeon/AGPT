@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include "Level.h"
+#include <cstdlib>
 
 class Spawner : public Actor
 {
@@ -16,6 +17,9 @@ public:
 	void SetLevel(Level* level);
 
 	virtual void Spawn(){};
+
+	int GetRandomIntInRange(int min, int max);
+	float GetRandomFloatInRange(float min, float max);
 
 };
 

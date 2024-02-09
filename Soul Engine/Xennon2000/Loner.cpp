@@ -2,7 +2,7 @@
 
 void Loner::Start()
 {
-	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .2f, .2f);
+	SetSpritesheetData("Assets/LonerA.bmp", 4, 4, .17f, .17f);
 	SetAnimationData(16, .1f);
 	Enemy::Start();
 }
@@ -16,7 +16,7 @@ void Loner::SetInitialPosition(float xpos, float ypos)
 {
 	Actor::SetInitialPosition(xpos,ypos);
 	shootPos.x = xpos;
-	shootPos.y = ypos+shootPosOffset;
+	shootPos.y = ypos-shootPosOffset;
 }
 
 void Loner::Shoot()
@@ -26,6 +26,10 @@ void Loner::Shoot()
 	{
 		elapsedTimeToShoot = 0.f;
 		std::cout << "Shoot" << std::endl;
+		/* //commented until EnemyProjectileClassWorks :c
+		ShieldPowerUp* test = new ShieldPowerUp;
+		test->SetInitialPosition(shootPos.x, shootPos.y);
+		currentLevel->AddActor(test);*/
 	}
 }
 void Loner::SetLevel(Level* level) 

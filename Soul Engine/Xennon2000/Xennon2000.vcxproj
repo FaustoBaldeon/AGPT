@@ -142,6 +142,7 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Companion.cpp" />
     <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="DroneSpawner.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="Loner.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="Companion.h" />
     <ClInclude Include="Drone.h" />
+    <ClInclude Include="DroneSpawner.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="Loner.h" />
