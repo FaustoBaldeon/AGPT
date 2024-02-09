@@ -153,6 +153,7 @@
     <ClCompile Include="MStoneAsteroid.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PowerUps.cpp" />
+    <ClCompile Include="PowerUpsSpawner.cpp" />
     <ClCompile Include="Rusher.cpp" />
     <ClCompile Include="RusherSpawner.cpp" />
     <ClCompile Include="ShieldPowerUp.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="MStoneAsteroid.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PowerUps.h" />
+    <ClInclude Include="PowerUpsSpawner.h" />
     <ClInclude Include="Rusher.h" />
     <ClInclude Include="RusherSpawner.h" />
     <ClInclude Include="ShieldPowerUp.h" />

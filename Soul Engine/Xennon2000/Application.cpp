@@ -5,6 +5,7 @@
 #include "LonerSpawner.h"
 #include "RusherSpawner.h"
 #include "DroneSpawner.h"
+#include "PowerUpsSpawner.h"
 
 using namespace Soul;
 
@@ -39,6 +40,11 @@ int main(int argc, char** argv)
 	droneSpawn->SetLevel(levelptr);
 	droneSpawn->timeToSpawn = 10.f;
 
+	PowerUpsSpawner* powerupSpawn = new PowerUpsSpawner;
+	powerupSpawn->SetInitialPosition(0.f,1.1f);
+	powerupSpawn->SetLevel(levelptr);
+	powerupSpawn->timeToSpawn = 5.f; 
+
 	player->SetLevel(levelptr);
 
 	currentLevel.AddActor(background);
@@ -50,6 +56,7 @@ int main(int argc, char** argv)
 	currentLevel.AddActor(lonerSpawner);
 	currentLevel.AddActor(rushSpawn);
 	currentLevel.AddActor(droneSpawn);
+	currentLevel.AddActor(powerupSpawn);
 
 	engine.SetLevel(levelptr);
 
@@ -57,14 +64,13 @@ int main(int argc, char** argv)
 
 	engine.Clean();
 
-
 	delete background; 
 	delete background2; 
 	delete player;
 	delete lonerSpawner;
 	delete rushSpawn;
 	delete droneSpawn;
-
+	delete powerupSpawn;
 
 	return 0;
 }
