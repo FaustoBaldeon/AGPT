@@ -144,10 +144,10 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="DroneSpawner.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="Loner.cpp" />
     <ClCompile Include="LonerSpawner.cpp" />
     <ClCompile Include="MetalAsteroids.cpp" />
+    <ClCompile Include="MetalAsteroidsSpawner.cpp" />
     <ClCompile Include="Missiles.cpp" />
     <ClCompile Include="MMetalAsteroid.cpp" />
     <ClCompile Include="MStoneAsteroid.cpp" />
@@ -161,6 +161,7 @@
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="SStoneAsteroid.cpp" />
     <ClCompile Include="StoneAsteroids.cpp" />
+    <ClCompile Include="StoneAsteroidsSpawner.cpp" />
     <ClCompile Include="WeaponPowerUp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,10 +176,10 @@
     <ClInclude Include="Drone.h" />
     <ClInclude Include="DroneSpawner.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="Loner.h" />
     <ClInclude Include="LonerSpawner.h" />
     <ClInclude Include="MetalAsteroids.h" />
+    <ClInclude Include="MetalAsteroidsSpawner.h" />
     <ClInclude Include="Missiles.h" />
     <ClInclude Include="MMetalAsteroid.h" />
     <ClInclude Include="MStoneAsteroid.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="SStoneAsteroid.h" />
     <ClInclude Include="StoneAsteroids.h" />
+    <ClInclude Include="StoneAsteroidsSpawner.h" />
     <ClInclude Include="WeaponPowerUp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -6,6 +6,8 @@
 #include "RusherSpawner.h"
 #include "DroneSpawner.h"
 #include "PowerUpsSpawner.h"
+#include "MetalAsteroidsSpawner.h"
+#include "StoneAsteroidsSpawner.h"
 
 using namespace Soul;
 
@@ -45,6 +47,16 @@ int main(int argc, char** argv)
 	powerupSpawn->SetLevel(levelptr);
 	powerupSpawn->timeToSpawn = 5.f; 
 
+	MetalAsteroidsSpawner* metalAsteroidsSpawn = new MetalAsteroidsSpawner;
+	metalAsteroidsSpawn->SetInitialPosition(0.f,1.1f);
+	metalAsteroidsSpawn->SetLevel(levelptr);
+	metalAsteroidsSpawn->timeToSpawn= 4.f; 
+
+	StoneAsteroidsSpawner* stoneAsteroidsSpawn = new StoneAsteroidsSpawner;
+	stoneAsteroidsSpawn->SetInitialPosition(0.f,1.1f);
+	stoneAsteroidsSpawn->SetLevel(levelptr);
+	stoneAsteroidsSpawn->timeToSpawn = 6.f;
+
 	player->SetLevel(levelptr);
 
 	currentLevel.AddActor(background);
@@ -56,7 +68,10 @@ int main(int argc, char** argv)
 	currentLevel.AddActor(lonerSpawner);
 	currentLevel.AddActor(rushSpawn);
 	currentLevel.AddActor(droneSpawn);
+
 	currentLevel.AddActor(powerupSpawn);
+	currentLevel.AddActor(metalAsteroidsSpawn);
+	currentLevel.AddActor(stoneAsteroidsSpawn);
 
 	engine.SetLevel(levelptr);
 
@@ -71,6 +86,8 @@ int main(int argc, char** argv)
 	delete rushSpawn;
 	delete droneSpawn;
 	delete powerupSpawn;
+	delete metalAsteroidsSpawn;
+	delete stoneAsteroidsSpawn;
 
 	return 0;
 }
