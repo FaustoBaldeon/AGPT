@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
 #include "Level.h"
+#include "LonerProjectile.h"
 
 class Loner : public Enemy
 {	

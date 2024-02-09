@@ -25,11 +25,9 @@ void Loner::Shoot()
 	if (elapsedTimeToShoot >= timeToShoot)
 	{
 		elapsedTimeToShoot = 0.f;
-		std::cout << "Shoot" << std::endl;
-		/* //commented until EnemyProjectileClassWorks 
-		ShieldPowerUp* test = new ShieldPowerUp;
-		test->SetInitialPosition(shootPos.x, shootPos.y);
-		currentLevel->AddActor(test);*/
+		LonerProjectile* pj = new LonerProjectile;
+		pj->SetInitialPosition(shootPos.x, shootPos.y);
+		currentLevel->AddActor(pj);
 	}
 }
 void Loner::SetLevel(Level* level) 

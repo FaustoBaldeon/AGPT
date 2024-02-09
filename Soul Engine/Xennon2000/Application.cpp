@@ -61,8 +61,8 @@ int main(int argc, char** argv)
 
 	currentLevel.AddActor(background);
 	currentLevel.AddActor(background2); 
-	currentLevel.AddActor(player);
 
+	currentLevel.AddActor(player);
 	currentLevel.AddPawn(player);
 
 	currentLevel.AddActor(lonerSpawner);
