@@ -3,7 +3,6 @@
 
 void Background::Start()
 {
-
 }
 
 Background::Background(){
@@ -12,13 +11,13 @@ Background::Background(){
 
 void Background::OnUpdate()
 {
-	if (position.y > -2.f)
+	if (position.x > -2.f)
 	{
-		SetPosition(position.x, position.y -= movespeed);
+		SetPosition(position.x -= movespeed, position.y );
 	}
 	else
 	{
-		position.y = 1.8f;
+		position.x = 1.8f;
 	}
 
 }

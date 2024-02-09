@@ -3,23 +3,23 @@
 void StoneAsteroidsSpawner::Spawn()
 {
 	int i = GetRandomIntInRange(0,2);
-	float xOffset = GetRandomFloatInRange(-.8f,.8f);
+	float yOffset = GetRandomFloatInRange(-.8f,.8f);
 	if (i == 0)
 	{
 		StoneAsteroids* asteroidB = new StoneAsteroids;
-		asteroidB->SetInitialPosition(position.x + xOffset, position.y);
+		asteroidB->SetInitialPosition(position.x , position.y + yOffset);
 		currentLevel->AddActor(asteroidB);
 	}
 	else if (i == 1)
 	{
 		MStoneAsteroid* asteroidM = new MStoneAsteroid;
-		asteroidM->SetInitialPosition(position.x + xOffset, position.y);
+		asteroidM->SetInitialPosition(position.x , position.y + yOffset);
 		currentLevel->AddActor(asteroidM);
 	}
 	else if (i == 2)
 	{
 		SStoneAsteroid* asteroidS = new SStoneAsteroid;
-		asteroidS->SetInitialPosition(position.x + xOffset, position.y);
+		asteroidS->SetInitialPosition(position.x , position.y + yOffset);
 		currentLevel->AddActor(asteroidS); 
 	}
 }

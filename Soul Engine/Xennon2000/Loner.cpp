@@ -8,7 +8,7 @@ void Loner::Start()
 }
 void Loner::OnUpdate() 
 {
-	SetPosition(position.x+=moveSpeed*dTime,position.y);
+	SetPosition(position.x-=moveSpeed*dTime,position.y);
 	shootPos.x = position.x;
 	Shoot();
 }

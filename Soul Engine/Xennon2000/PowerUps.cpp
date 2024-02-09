@@ -7,5 +7,5 @@ void PowerUps::Start()
 
 void PowerUps::OnUpdate()
 {
-	SetPosition(position.x, position.y-=movespeed*dTime);
+	SetPosition(position.x -= movespeed * dTime, position.y);
 }

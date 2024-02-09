@@ -3,6 +3,6 @@
 
 void Asteroids::OnUpdate()
 {
-	SetPosition(position.x, position.y-=(moveSpeed*dTime));
+	SetPosition(position.x -= (moveSpeed * dTime), position.y);
 }
 

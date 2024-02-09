@@ -23,12 +23,12 @@ int main(int argc, char** argv)
 
 	Background* background = new Background;
 	Background* background2 = new Background;
-	background2->SetInitialPosition(0.f,2.f);
+	background2->SetInitialPosition(2.f,0.f);
 
 	Player* player = new Player;
 
 	LonerSpawner* lonerSpawner = new LonerSpawner; 
-	lonerSpawner->SetInitialPosition(-1.1f,0.f);
+	lonerSpawner->SetInitialPosition(1.1f,0.f);
 	lonerSpawner->SetLevel(levelptr); 
 	lonerSpawner->timeToSpawn = 5.f;   
 
@@ -43,17 +43,17 @@ int main(int argc, char** argv)
 	droneSpawn->timeToSpawn = 10.f;
 
 	PowerUpsSpawner* powerupSpawn = new PowerUpsSpawner;
-	powerupSpawn->SetInitialPosition(0.f,1.1f);
+	powerupSpawn->SetInitialPosition(1.1f,0.f);
 	powerupSpawn->SetLevel(levelptr);
 	powerupSpawn->timeToSpawn = 5.f; 
 
 	MetalAsteroidsSpawner* metalAsteroidsSpawn = new MetalAsteroidsSpawner;
-	metalAsteroidsSpawn->SetInitialPosition(0.f,1.1f);
+	metalAsteroidsSpawn->SetInitialPosition(1.1f,0.f);
 	metalAsteroidsSpawn->SetLevel(levelptr);
 	metalAsteroidsSpawn->timeToSpawn= 4.f; 
 
 	StoneAsteroidsSpawner* stoneAsteroidsSpawn = new StoneAsteroidsSpawner;
-	stoneAsteroidsSpawn->SetInitialPosition(0.f,1.1f);
+	stoneAsteroidsSpawn->SetInitialPosition(1.1f,0.f);
 	stoneAsteroidsSpawn->SetLevel(levelptr);
 	stoneAsteroidsSpawn->timeToSpawn = 6.f;
 

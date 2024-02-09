@@ -2,7 +2,7 @@
 
 void Drone::Start()
 {
-	SetSpritesheetData("Assets/drone.bmp", 8, 2, .10f, .10f);
+	SetSpritesheetData("Assets/drone.bmp", 8, 2, .12f, .12f);
 	SetAnimationData(16, .05f);
 	Enemy::Start();
 }

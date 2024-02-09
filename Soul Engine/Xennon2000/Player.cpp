@@ -34,12 +34,13 @@ void Player::Start()
 	objectType = "ally";
 	currentHealth = maxHealth;
 
-	SetPosition(0.f, -.8f);
+	SetPosition(-.8f, 0.f);
 	shootPosition.x = position.x;
 	shootPosition.y = position.y + shootPointOffset;
 
 	SetSpritesheetData("Assets/Ship1.bmp", 7, 1, .25f, .25f);
 	SetAnimationData(7, 1.f);
+	sprite.rotate = true;
 }
 
 void Player::SetLevel(Level* level)

@@ -28,6 +28,7 @@ public:
 		int numRows;
 		float xScale = 1.f;
 		float yScale = 1.f;
+		bool rotate = false;
 	};
 
 	virtual void Start(){};
