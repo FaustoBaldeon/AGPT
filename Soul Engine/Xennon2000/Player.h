@@ -8,7 +8,6 @@ class Player : public Pawn
 public:
 	void Start() override;
 	void OnKeyPressed(std::string keyPressed) override;
-	void OnCollisionEnter(Actor& actor) override;
 
 	void GetDamage(float damage);
 

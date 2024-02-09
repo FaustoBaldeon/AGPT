@@ -11,11 +11,8 @@ public:
 	void Shoot();
 
 	void SetLevel(Level* level);
-
-
 private:
 	float moveSpeed = .15f;
-
 	Level* currentLevel;
 	float shootPosOffset = .1f;
 	float timeToShoot = 2.f;

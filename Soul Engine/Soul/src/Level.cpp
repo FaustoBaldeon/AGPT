@@ -14,7 +14,6 @@ Level::~Level()
 
 void Level::AddActor(Actor* newActor)
 {
-
 	newActor->Start(); 
 	actorsLevel.push_back(newActor);
 }

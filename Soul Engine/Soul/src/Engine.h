@@ -9,8 +9,6 @@ namespace Soul
 	class Engine {
 
 	public:
-
-
 		void Initialize(const char* title, int width, int height);
 
 		void Run();
@@ -21,15 +19,12 @@ namespace Soul
 
 		static Engine* getEngine() { return instance; }
 
-		//Level* getLevel(){return &currentLevel;}
-
 		void SetLevel(Level* level);
 
 		float deltaTime = 0;
 	
 
 	private:
-
 		static Engine* instance;
 		void HandleEvents(); 
 		void UpdatePawnsInput(std::string keyPressed);

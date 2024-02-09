@@ -34,16 +34,13 @@ namespace Soul
 	void Engine::Run() 
 	{
 		isRunning = true;
-
 		while (isRunning) //Game Loop
 		{
 			currentTime = (float)SDL_GetTicks();
 			deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
 			frameTime += deltaTime;
-
-			
-		
+	
 			HandleEvents();
 
 			for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)
@@ -61,12 +58,8 @@ namespace Soul
 				currentActor->OnUpdate();
 				currentActor->AnimationUpdate(deltaTime);
 				currentActor->UpdateTime(deltaTime, frameTime);
-
 			}
-
-
 			Render(); 
-
 		}
 	}
 

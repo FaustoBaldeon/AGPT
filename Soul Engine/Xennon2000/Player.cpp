@@ -47,16 +47,15 @@ void Player::SetLevel(Level* level)
 	currentLevel = level;
 }
 
-void Player::OnCollisionEnter(Actor& actor)
-{
-
-}
-
 void Player::Shoot()
 {
 	std::cout << "PlayerShoot" << std::endl;
 	std::cout << "XcoordShoot" << shootPosition.x << "YcoordShoot:" << shootPosition.y << std::endl;
 	std::cout << "XcoordPlayer" << position.x << "YcoordPlayer:" << position.y << std::endl;
+	/* //commented until EnemyProjectileClassWorks
+		ShieldPowerUp* test = new ShieldPowerUp;
+		test->SetInitialPosition(shootPos.x, shootPos.y);
+		currentLevel->AddActor(test);*/
 }
 
 void Player::GetDamage(float damage)

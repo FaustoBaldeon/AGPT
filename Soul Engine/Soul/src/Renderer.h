@@ -23,8 +23,6 @@ namespace Soul {
 
 		void SetCurrentTextCoords(int currentFrame, int totalFrames, int numColumns, int numRows);
 
-
-
 	private:
 		Shader* shader;
 

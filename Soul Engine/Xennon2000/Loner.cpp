@@ -26,7 +26,7 @@ void Loner::Shoot()
 	{
 		elapsedTimeToShoot = 0.f;
 		std::cout << "Shoot" << std::endl;
-		/* //commented until EnemyProjectileClassWorks :c
+		/* //commented until EnemyProjectileClassWorks 
 		ShieldPowerUp* test = new ShieldPowerUp;
 		test->SetInitialPosition(shootPos.x, shootPos.y);
 		currentLevel->AddActor(test);*/

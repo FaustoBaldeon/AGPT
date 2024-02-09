@@ -79,15 +79,13 @@ int main(int argc, char** argv)
 
 	engine.Clean();
 
-	delete background; 
-	delete background2; 
-	delete player;
-	delete lonerSpawner;
-	delete rushSpawn;
-	delete droneSpawn;
-	delete powerupSpawn;
-	delete metalAsteroidsSpawn;
-	delete stoneAsteroidsSpawn;
+	
+	for (auto actor : currentLevel.actorsLevel)
+	{
+		delete actor;
+	}
+	currentLevel.actorsLevel.clear();
+	currentLevel.pawnsLevel.clear();
 
 	return 0;
 }
