@@ -1,6 +1,12 @@
-﻿  Missil.cpp
+﻿  Companion.cpp
+  Missil.cpp
 C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\Xennon2000\Missil.cpp(6,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  MStoneAsteroid.cpp
   Player.cpp
+  PowerUpsSpawner.cpp
+  ShieldPowerUp.cpp
+  StoneAsteroids.cpp
   StoneAsteroidsSpawner.cpp
   Generating Code...
+  LINK : C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\x64\Debug\Xennon2000.exe not found or not built by the last incremental link; performing full link
   Xennon2000.vcxproj -> C:\Users\faust\Desktop\IPL\3rdYear\AGPT&CG2.0\AGPT\Soul Engine\x64\Debug\Xennon2000.exe

@@ -1,6 +1,7 @@
 #pragma once
 #include "PowerUps.h"
 #include "Player.h"
+#include "Companion.h"
 
 class ShieldPowerUp : public PowerUps
 {

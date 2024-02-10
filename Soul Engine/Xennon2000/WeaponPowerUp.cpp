@@ -15,4 +15,13 @@ void WeaponPowerUp::OnCollisionEnter(Actor& actor)
 		player->UpgradeAmmo();
 		Destroy();
 	}
+	else
+	{
+		Companion* companion = dynamic_cast<Companion*>(&actor);
+		if (companion != nullptr)
+		{
+			companion->UpgradeAmmo();
+			Destroy();
+		}
+	}
 }

@@ -18,4 +18,13 @@ void ShieldPowerUp::OnCollisionEnter(Actor& actor)
 		player->Heal(healthToRestore);
 		Destroy();
 	}
+	else
+	{
+		Companion* companion = dynamic_cast<Companion*>(&actor);
+		if (companion != nullptr)
+		{
+			companion->Heal(healthToRestore);
+			Destroy();
+		}
+	}
 }

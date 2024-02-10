@@ -111,6 +111,7 @@ void Player::AddCompanion(float yoffset)
 		companion->SetInitialPosition(position.x+companionXOffset, position.y+yoffset);
 		companion->SetLevel(currentLevel);
 		companion->SetSpeed(movespeed);
+		companion->SetMissilesDamage(smallMissileDamage, mediumMissileDamage, bigMissileDamage);
 		companion->SetOwner(this);
 
 		companions.push_back(companion);

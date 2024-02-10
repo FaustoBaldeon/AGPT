@@ -8,6 +8,7 @@ void Companion::Start()
 	SetAnimationData(20, .1f);
 	sprite.rotate = true;
 	currentHealth = maxHealth;
+	currentMissileDamage = smallMissileDamage;
 }
 
 void Companion::SetInitialPosition(float xpos, float ypos)
@@ -59,8 +60,37 @@ void Companion::Shoot()
 {
 	Missil* pj = new Missil;
 	pj->SetInitialPosition(shootPosition.x, shootPosition.y);
+	pj->SetDamage(currentMissileDamage);
 	pj->SetLevel(currentLevel);
 	currentLevel->AddActor(pj);
+}
+
+void Companion::SetMissilesDamage(float smallmiss, float mediummiss, float bigmiss)
+{
+	smallMissileDamage = smallmiss;
+	mediumMissileDamage = mediummiss;
+	bigMissileDamage = bigmiss;
+}
+
+void Companion::UpgradeAmmo()
+{
+	if (currentMissileDamage == smallMissileDamage)
+	{
+		currentMissileDamage = mediumMissileDamage;
+	}
+	else if (currentMissileDamage == mediumMissileDamage)
+	{
+		currentMissileDamage = bigMissileDamage;
+	}
+}
+
+void Companion::Heal(float amount)
+{
+	currentHealth += amount;
+	if (currentHealth > maxHealth)
+	{
+		currentHealth = maxHealth;
+	}
 }
 
 void Companion::SetLevel(Level* level)
