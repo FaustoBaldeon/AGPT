@@ -1,5 +1,7 @@
 #pragma once
 #include "PowerUps.h"
+#include "Player.h"
+
 class WeaponPowerUp : public PowerUps
 {
 public:

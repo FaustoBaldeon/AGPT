@@ -8,12 +8,14 @@ void StoneAsteroidsSpawner::Spawn()
 	{
 		StoneAsteroids* asteroidB = new StoneAsteroids;
 		asteroidB->SetInitialPosition(position.x , position.y + yOffset);
+		asteroidB->SetLevel(currentLevel);
 		currentLevel->AddActor(asteroidB);
 	}
 	else if (i == 1)
 	{
 		MStoneAsteroid* asteroidM = new MStoneAsteroid;
 		asteroidM->SetInitialPosition(position.x , position.y + yOffset);
+		asteroidM->SetLevel(currentLevel);
 		currentLevel->AddActor(asteroidM);
 	}
 	else if (i == 2)

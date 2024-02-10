@@ -1,4 +1,7 @@
-﻿  Engine.cpp
+﻿  Actor.cpp
+  Engine.cpp
+  Level.cpp
+  Pawn.cpp
   Renderer.cpp
   spch.cpp
   Generating Code...

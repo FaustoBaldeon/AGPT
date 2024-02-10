@@ -35,6 +35,7 @@ public:
 	virtual void OnUpdate(){};
 	virtual void OnCollisionEnter(Actor& collision){};
 	virtual void OnDestroyed(){};
+	virtual void GetDamage(float damage){};
 
 	void AnimationUpdate(float deltaTime);
 

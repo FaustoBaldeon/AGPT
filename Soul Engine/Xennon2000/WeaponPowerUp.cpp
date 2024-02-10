@@ -9,9 +9,10 @@ void WeaponPowerUp::Start()
 
 void WeaponPowerUp::OnCollisionEnter(Actor& actor)
 {
-	if (actor.objectType == "ally")
+	Player* player = dynamic_cast<Player*>(&actor);
+	if (player != nullptr)
 	{
-		//upgrade weapon
+		player->UpgradeAmmo();
 		Destroy();
 	}
 }

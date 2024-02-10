@@ -4,7 +4,7 @@
 class Enemy : public Actor
 {
 public:
-    void GetDamage(float damage);
+    void GetDamage(float damage) override;
     void Start() override;
     void OnDestroyed() override;
 

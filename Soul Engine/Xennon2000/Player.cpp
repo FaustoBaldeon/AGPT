@@ -57,9 +57,11 @@ void Player::Start()
 	currentHealth = maxHealth;
 	currentLives = maxLives;
 
-	SetPosition(-.8f, 0.f);
+	SetPosition(-.8f, 0.f); //initial position
+
 	shootPosition.x = position.x + shootPointOffset;
 	shootPosition.y = position.y;
+	currentMissileDamage = smallMissileDamage;
 
 	SetSpritesheetData("Assets/Ship1.bmp", 7, 1, .2f, .2f);
 	SetAnimationData(7, 1.f);
@@ -80,6 +82,7 @@ void Player::Shoot()
 {
 	Missil* pj = new Missil;
 	pj->SetInitialPosition(shootPosition.x, shootPosition.y);
+	pj->SetDamage(currentMissileDamage);
 	pj->SetLevel(currentLevel);
 	currentLevel->AddActor(pj);
 }
@@ -113,6 +116,27 @@ void Player::AddCompanion(float yoffset)
 		companions.push_back(companion);
 
 		currentLevel->AddActor(companion);
+	}
+}
+
+void Player::Heal(float amount)
+{
+	currentHealth += amount;
+	if (currentHealth > maxHealth)
+	{
+		currentHealth = maxHealth;
+	}
+}
+
+void Player::UpgradeAmmo()
+{
+	if (currentMissileDamage == smallMissileDamage)
+	{
+		currentMissileDamage = mediumMissileDamage;
+	}
+	else if (currentMissileDamage == mediumMissileDamage)
+	{
+		currentMissileDamage = bigMissileDamage;
 	}
 }
 

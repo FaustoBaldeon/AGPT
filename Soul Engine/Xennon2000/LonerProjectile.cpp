@@ -11,3 +11,12 @@ void LonerProjectile::OnUpdate()
 {
 	SetPosition(position.x-=speed*dTime,position.y);
 }
+
+void LonerProjectile::OnCollisionEnter(Actor& actor)
+{
+	if (actor.objectType == "ally")
+	{
+		actor.GetDamage(damageToApply);
+		Destroy();
+	}
+}

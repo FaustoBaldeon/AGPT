@@ -11,3 +11,19 @@ void Missil::OnUpdate()
 {
 	SetPosition(position.x+=speed*dTime, position.y);
 }
+
+void Missil::OnCollisionEnter(Actor& actor)
+{
+	if (actor.objectType == "enemy" || actor.objectType == "stoneasteroid")
+	{
+		actor.GetDamage(damageToApply);
+		Destroy();
+	}
+}
+
+void Missil::SetDamage(float damage)
+{
+	damageToApply = damage;
+}
+
+

@@ -12,9 +12,10 @@ void ShieldPowerUp::Start()
 
 void ShieldPowerUp::OnCollisionEnter(Actor& actor)
 {
-	if (actor.objectType == "ally")
+	Player* player = dynamic_cast<Player*>(&actor);
+	if (player != nullptr)
 	{
-		//restore health
+		player->Heal(healthToRestore);
 		Destroy();
 	}
 }

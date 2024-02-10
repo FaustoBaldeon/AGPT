@@ -12,7 +12,10 @@ public:
 	void Start() override;
 	void OnKeyPressed(std::string keyPressed) override;
 
-	void GetDamage(float damage);
+	void GetDamage(float damage) override;
+	void Heal(float amount);
+
+	void UpgradeAmmo();
 
 	void Shoot();
 
@@ -35,8 +38,11 @@ private:
 	float lifesUIOffset = 0.f;
 
 	float shootPointOffset = .15f;
-
 	Position shootPosition;
+	float currentMissileDamage = 0.f;
+	float smallMissileDamage = 25.f;
+	float mediumMissileDamage = 50.f;
+	float bigMissileDamage = 75.f;
 
 	float companionXOffset = 0.1f;
 	float companion1YOffset = .15f;

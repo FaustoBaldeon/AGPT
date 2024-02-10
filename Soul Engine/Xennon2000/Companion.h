@@ -18,7 +18,7 @@ public:
 	void MoveLeft();
 	void MoveRight();
 
-	void GetDamage(float damage);
+	void GetDamage(float damage) override;
 
 	void SetLevel(Level* level);
 

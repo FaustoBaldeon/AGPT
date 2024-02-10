@@ -12,7 +12,8 @@ void MStoneAsteroid::Start()
 }
 void MStoneAsteroid::OnDestroyed()
 {
-	//spawn smaller asteroids
+	SpawnAsteroid(yOffsetAsteroid1);
+	SpawnAsteroid(yOffsetAsteroid2);
 }
 
 void MStoneAsteroid::GetDamage(float damage)
@@ -22,4 +23,16 @@ void MStoneAsteroid::GetDamage(float damage)
 	{
 		Destroy();
 	}
+}
+
+void MStoneAsteroid::SpawnAsteroid(float offset)
+{
+	SStoneAsteroid* stoneas = new SStoneAsteroid;
+	stoneas->SetInitialPosition(position.x, position.y+offset);
+	currentLevel->AddActor(stoneas);
+}
+
+void MStoneAsteroid::SetLevel(Level* level)
+{
+	currentLevel = level;
 }
