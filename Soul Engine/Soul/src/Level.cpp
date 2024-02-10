@@ -21,6 +21,5 @@ void Level::AddActor(Actor* newActor)
 void Level::AddPawn(Pawn* newPawn)
 {
 	pawnsLevel.push_back(newPawn);
-	newPawn->Start();
 }
 

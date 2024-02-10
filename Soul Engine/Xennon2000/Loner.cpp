@@ -27,6 +27,7 @@ void Loner::Shoot()
 		elapsedTimeToShoot = 0.f;
 		LonerProjectile* pj = new LonerProjectile;
 		pj->SetInitialPosition(shootPos.x, shootPos.y);
+		pj->SetLevel(currentLevel);
 		currentLevel->AddActor(pj);
 	}
 }

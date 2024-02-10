@@ -53,17 +53,12 @@ public:
 
 	virtual void SetInitialPosition(float xpos, float ypos);
 
+	void Destroy();
+
 	protected:
 	void SetSpritesheetData(std::string filePath, int numColumns, int numRows, float scaleX, float scaleY);
 	void SetPosition(float positionX, float positionY);
 	void SetAnimationData(int totalFrames, float frameDuration);
-	void Destroy();
-
-
-	
-
-	
-
 
 };
 

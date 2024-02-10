@@ -59,6 +59,7 @@ void Companion::Shoot()
 {
 	Missil* pj = new Missil;
 	pj->SetInitialPosition(shootPosition.x, shootPosition.y);
+	pj->SetLevel(currentLevel);
 	currentLevel->AddActor(pj);
 }
 

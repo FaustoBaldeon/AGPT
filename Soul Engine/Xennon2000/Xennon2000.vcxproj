@@ -144,6 +144,8 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="DroneSpawner.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="LifeUI.cpp" />
     <ClCompile Include="Loner.cpp" />
     <ClCompile Include="LonerProjectile.cpp" />
     <ClCompile Include="LonerSpawner.cpp" />
@@ -178,6 +180,8 @@
     <ClInclude Include="Drone.h" />
     <ClInclude Include="DroneSpawner.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="LifeUI.h" />
     <ClInclude Include="Loner.h" />
     <ClInclude Include="LonerProjectile.h" />
     <ClInclude Include="LonerSpawner.h" />

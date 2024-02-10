@@ -55,6 +55,7 @@ void Player::Start()
 {	
 	objectType = "ally";
 	currentHealth = maxHealth;
+	currentLives = maxLives;
 
 	SetPosition(-.8f, 0.f);
 	shootPosition.x = position.x + shootPointOffset;
@@ -66,6 +67,8 @@ void Player::Start()
 
 	AddCompanion(companion1YOffset);
 	AddCompanion(companion2YOffset);
+
+	SetLivesUI();
 }
 
 void Player::SetLevel(Level* level)
@@ -77,20 +80,22 @@ void Player::Shoot()
 {
 	Missil* pj = new Missil;
 	pj->SetInitialPosition(shootPosition.x, shootPosition.y);
+	pj->SetLevel(currentLevel);
 	currentLevel->AddActor(pj);
 }
 
 void Player::GetDamage(float damage)
 {
 	currentHealth -= damage;
-	if (currentHealth <= 0.f && lives <= 0)
+	if (currentHealth <= 0.f && currentLives <= 0)
 	{
 		Destroy();
 	}
-	else if (currentHealth <= 0.f && lives > 0)
+	else if (currentHealth <= 0.f && currentLives > 0)
 	{
-		--lives;
+		--currentLives;
 		currentHealth = maxHealth;
+		RemoveLiveUI();
 	}
 }
 
@@ -118,5 +123,28 @@ void Player::RemoveCompanion(Companion* comp)
 	{
 		companions.erase(i);
 		delete comp;
+	}
+}
+
+void Player::SetLivesUI()
+{
+	for (int i = 0; i < maxLives; ++i)
+	{
+		LifeUI* life = new LifeUI;
+		life->SetInitialPosition(-.9f + lifesUIOffset, -.9f);
+		currentLevel->AddActor(life);
+		livesList.push_back(life);
+		lifesUIOffset+=.15f;
+	}
+	std::cout << livesList.size() << std::endl;
+}
+
+void Player::RemoveLiveUI()
+{
+	if (!livesList.empty())
+	{
+		auto i = std::prev(livesList.end());
+		(*i)->Destroy();
+		livesList.pop_back();
 	}
 }

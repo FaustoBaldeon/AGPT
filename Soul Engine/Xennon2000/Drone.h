@@ -12,7 +12,7 @@ private:
 
 	float xSinOffset = 0.f;
 	float elapsedMovementTime = 0.f;
-	float maxMovementTime = 2.f;
+	float maxMovementTime = .75f;
 	bool directionFlag = true;
 };
 
