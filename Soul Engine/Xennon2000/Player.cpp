@@ -66,6 +66,7 @@ void Player::Start()
 	SetSpritesheetData("Assets/Ship1.bmp", 7, 1, .2f, .2f);
 	SetAnimationData(7, 1.f);
 	sprite.rotate = true;
+	sprite.rotationAngle = -90.f;
 
 	AddCompanion(companion1YOffset);
 	AddCompanion(companion2YOffset);

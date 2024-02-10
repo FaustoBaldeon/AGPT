@@ -28,7 +28,7 @@ namespace Soul {
 
 		void InitRenderData();
 
-		void UpdateModelMatrix(glm::vec2 position, glm::vec2 scale, bool rotate);
+		void UpdateModelMatrix(glm::vec2 position, glm::vec2 scale, bool rotate, float angle);
 
 		struct Texture{
 			unsigned int textureID;
@@ -40,7 +40,6 @@ namespace Soul {
 		std::vector<Texture>textList;
 
 		glm::vec3 zAxisRot = glm::vec3(0.f, 0.f, 1.f);
-		float angleRot = -90.f;
 
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
 		

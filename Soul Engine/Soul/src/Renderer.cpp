@@ -149,7 +149,7 @@ namespace Soul {
 			glBindTexture(GL_TEXTURE_2D, currentTexture);
 			UpdateModelMatrix(glm::vec2(currentLevel->actorsLevel[i]->position.x, currentLevel->actorsLevel[i]->position.y),
 							glm::vec2(currentLevel->actorsLevel[i]->sprite.xScale, currentLevel->actorsLevel[i]->sprite.yScale),
-							currentLevel->actorsLevel[i]->sprite.rotate);
+							currentLevel->actorsLevel[i]->sprite.rotate, currentLevel->actorsLevel[i]->sprite.rotationAngle);
 
 			SetCurrentTextCoords(currentLevel->actorsLevel[i]->anim.currentFrame, currentLevel->actorsLevel[i]->anim.totalFrames,
 				currentLevel->actorsLevel[i]->sprite.numColumns, currentLevel->actorsLevel[i]->sprite.numRows);
@@ -169,14 +169,14 @@ namespace Soul {
 		return -1;
 	}
 
-	void Renderer::UpdateModelMatrix(glm::vec2 position, glm::vec2 scale, bool rotate)
+	void Renderer::UpdateModelMatrix(glm::vec2 position, glm::vec2 scale, bool rotate, float angle)
 	{
 		modelMatrix = glm::mat4(1.f); 
 		modelMatrix = glm::translate(modelMatrix, glm::vec3(position, 0.f)); 
 		modelMatrix = glm::scale(modelMatrix, glm::vec3(scale, 1.0f)); 
 		if (rotate)
 		{
-			modelMatrix = glm::rotate(modelMatrix, glm::radians(angleRot), zAxisRot);
+			modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), zAxisRot);
 		}
 		shader->SetUniformMat4f("model", modelMatrix); 
 	}

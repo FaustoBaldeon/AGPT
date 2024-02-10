@@ -7,6 +7,7 @@ void Companion::Start()
 	SetSpritesheetData("Assets/clone.bmp", 4, 5, .09f,.09f);
 	SetAnimationData(20, .1f);
 	sprite.rotate = true;
+	sprite.rotationAngle = -90.f;
 	currentHealth = maxHealth;
 	currentMissileDamage = smallMissileDamage;
 }

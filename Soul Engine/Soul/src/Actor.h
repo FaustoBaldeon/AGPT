@@ -29,6 +29,7 @@ public:
 		float xScale = 1.f;
 		float yScale = 1.f;
 		bool rotate = false;
+		float rotationAngle = 0.f;
 	};
 
 	virtual void Start(){};

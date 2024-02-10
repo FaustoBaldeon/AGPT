@@ -5,6 +5,7 @@ void Missil::Start()
 	SetSpritesheetData("Assets/missile.bmp", 2 , 3, .06f,.06f);
 	SetAnimationData(2, .1);
 	sprite.rotate = true;
+	sprite.rotationAngle = -90.f;
 	speed = .5f;
 }
 void Missil::OnUpdate()
