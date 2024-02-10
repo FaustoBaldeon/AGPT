@@ -28,6 +28,33 @@ namespace Soul
 		//Initialize Renderer
 		render.Init(window);
 		//End init
+		/*
+		gravity = std::make_unique<b2Vec2>(0.0f, -10.0f);
+		world = std::make_unique<b2World>(*gravity); 
+
+		b2BodyDef groundBodyDef;
+		groundBodyDef.position.Set(0.f,-10.f);
+		b2Body* groundBody = world->CreateBody(&groundBodyDef);
+		b2PolygonShape groundBox;
+		groundBox.SetAsBox(50.f,10.f);
+		groundBody->CreateFixture(&groundBox,0.f);
+
+		b2BodyDef bodyDef;
+		bodyDef.type = b2_dynamicBody;
+		bodyDef.position.Set(0.f,4.f);
+		dynamicBody = world->CreateBody(&bodyDef);
+
+		b2PolygonShape dynamicBox;
+		dynamicBox.SetAsBox(1.f,1.f);
+
+		b2FixtureDef fixtureDef;
+		fixtureDef.shape = &dynamicBox;
+
+		fixtureDef.density = 1.f;
+		fixtureDef.friction = .3f;
+
+		dynamicBody->CreateFixture(&fixtureDef);
+		*/
 		std::cout << "Soul has started! \n" << std::endl;
 	}
 
@@ -40,7 +67,15 @@ namespace Soul
 			deltaTime = (currentTime - previousTime) / 1000.f; 
 			previousTime = currentTime;
 			frameTime += deltaTime;
-	
+			/*
+			for (int32 i = 0; i < 60; ++i)
+			{
+				world->Step(timeStep, velocityIterations, positionIterations);
+				b2Vec2 position = dynamicBody->GetPosition();
+				float angle = dynamicBody->GetAngle();
+				printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+			}*/
+
 			HandleEvents();
 
 			for (int i = 0; i < currentLevel->actorsLevel.size(); ++i)

@@ -136,7 +136,6 @@ void Player::SetLivesUI()
 		livesList.push_back(life);
 		lifesUIOffset+=.15f;
 	}
-	std::cout << livesList.size() << std::endl;
 }
 
 void Player::RemoveLiveUI()

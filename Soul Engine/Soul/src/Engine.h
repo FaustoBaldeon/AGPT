@@ -22,8 +22,15 @@ namespace Soul
 		void SetLevel(Level* level);
 
 		float deltaTime = 0;
-	
 
+		/*
+		std::unique_ptr<b2Vec2> gravity;
+		std::unique_ptr<b2World> world;
+		b2Body* dynamicBody;
+		float timeStep = 1.f/60.f;
+		int32 velocityIterations = 6;
+		int32 positionIterations = 2;*/
+	
 	private:
 		static Engine* instance;
 		void HandleEvents(); 
