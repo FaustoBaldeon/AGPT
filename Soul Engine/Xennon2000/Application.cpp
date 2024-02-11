@@ -86,6 +86,5 @@ int main(int argc, char** argv)
 	}
 	currentLevel.actorsLevel.clear();
 	currentLevel.pawnsLevel.clear();
-
 	return 0;
 }

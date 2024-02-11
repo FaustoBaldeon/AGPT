@@ -24,11 +24,6 @@ void Spawner::OnUpdate()
 	elapsedTimeToSpawn+=dTime;
 	if (elapsedTimeToSpawn >= timeToSpawn)
 	{	
-		//std::cout << "spawned" << std::endl;
-		/*
-		Loner* loner = new Loner;
-		loner->SetInitialPosition(position.x,position.y);
-		currentLevel->AddActor(loner);*/
 		Spawn(); 
 		elapsedTimeToSpawn = 0.f;
 		

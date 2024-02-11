@@ -7,3 +7,4 @@ void MetalAsteroids::Start()
 	SetAnimationData(25, animDuration);
 	moveSpeed = 0.2f;
 }
+

@@ -193,8 +193,6 @@ namespace Soul {
 
 		float currentYTextCoord = 1.f- row * frameHeight;
 
-		//UNIFORMS SETUP
-
 		shader->SetUniform2f("currentTexCoord",currrentXTextCoord,currentYTextCoord);
 		shader->SetUniform2f("spriteDimensions",frameWidth,frameHeight);
 

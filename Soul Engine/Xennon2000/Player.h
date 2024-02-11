@@ -3,9 +3,7 @@
 #include "Level.h"
 #include "Missil.h"
 #include "LifeUI.h"
-
 class Companion;
-
 class Player : public Pawn
 {
 public:
@@ -14,9 +12,7 @@ public:
 
 	void GetDamage(float damage) override;
 	void Heal(float amount);
-
 	void UpgradeAmmo();
-
 	void Shoot();
 
 	void SetLevel(Level* level);
@@ -25,7 +21,6 @@ public:
 	void RemoveCompanion(Companion* comp);
 
 	void SetLivesUI();
-
 	void RemoveLiveUI();
 
 private:

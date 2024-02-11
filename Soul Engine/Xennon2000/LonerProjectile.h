@@ -1,5 +1,6 @@
 #pragma once
 #include "Projectile.h"
+
 class LonerProjectile : public Projectile
 {
 public:

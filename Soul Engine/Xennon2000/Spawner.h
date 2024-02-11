@@ -16,8 +16,8 @@ public:
 
 	void SetLevel(Level* level);
 
+protected:
 	virtual void Spawn(){};
-
 	int GetRandomIntInRange(int min, int max);
 	float GetRandomFloatInRange(float min, float max);
 

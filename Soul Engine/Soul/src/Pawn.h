@@ -4,6 +4,5 @@ class Pawn : public Actor
 {
 public:
 	virtual void OnKeyPressed(std::string keyPressed){};
-
 };
 

@@ -46,7 +46,6 @@ public:
 	Animation anim;
 	Position position;
 	
-
 	bool pendingDelete = false;
 
 	std::string objectType;
