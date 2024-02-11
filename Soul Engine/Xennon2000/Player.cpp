@@ -67,10 +67,10 @@ void Player::Start()
 	SetAnimationData(7, 1.f);
 	sprite.rotate = true;
 	sprite.rotationAngle = -90.f;
-
+	/*
 	AddCompanion(companion1YOffset);
 	AddCompanion(companion2YOffset);
-
+	*/
 	SetLivesUI();
 }
 

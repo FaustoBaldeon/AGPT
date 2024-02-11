@@ -4,10 +4,6 @@
 #include "Player.h"
 #include "LonerSpawner.h"
 #include "RusherSpawner.h"
-#include "DroneSpawner.h"
-#include "PowerUpsSpawner.h"
-#include "MetalAsteroidsSpawner.h"
-#include "StoneAsteroidsSpawner.h"
 
 using namespace Soul;
 
@@ -27,35 +23,25 @@ int main(int argc, char** argv)
 
 	Player* player = new Player;
 
-	LonerSpawner* lonerSpawner = new LonerSpawner; 
-	lonerSpawner->SetInitialPosition(1.1f,0.f);
-	lonerSpawner->SetLevel(levelptr); 
-	lonerSpawner->timeToSpawn = 5.f;   
+	LonerSpawner* lonerSpawner1 = new LonerSpawner; 
+	lonerSpawner1->SetInitialPosition(1.1f,0.f);
+	lonerSpawner1->SetLevel(levelptr); 
+	lonerSpawner1->timeToSpawn = 5.f;   
 
-	RusherSpawner* rushSpawn = new RusherSpawner;
-	rushSpawn->SetInitialPosition(0.f,1.1f);
-	rushSpawn->SetLevel(levelptr);
-	rushSpawn->timeToSpawn = 7.f;
+	LonerSpawner* lonerSpawner2 = new LonerSpawner;
+	lonerSpawner2->SetInitialPosition(1.1f, 0.f);
+	lonerSpawner2->SetLevel(levelptr);
+	lonerSpawner2->timeToSpawn = 2.f;
 
-	DroneSpawner* droneSpawn = new DroneSpawner;
-	droneSpawn->SetInitialPosition(0.f,1.1f);
-	droneSpawn->SetLevel(levelptr);
-	droneSpawn->timeToSpawn = 10.f;
+	RusherSpawner* rushSpawn1 = new RusherSpawner;
+	rushSpawn1->SetInitialPosition(0.f,1.1f);
+	rushSpawn1->SetLevel(levelptr);
+	rushSpawn1->timeToSpawn = 7.f;
 
-	PowerUpsSpawner* powerupSpawn = new PowerUpsSpawner;
-	powerupSpawn->SetInitialPosition(1.1f,0.f);
-	powerupSpawn->SetLevel(levelptr);
-	powerupSpawn->timeToSpawn = 5.f; 
-
-	MetalAsteroidsSpawner* metalAsteroidsSpawn = new MetalAsteroidsSpawner;
-	metalAsteroidsSpawn->SetInitialPosition(1.1f,0.f);
-	metalAsteroidsSpawn->SetLevel(levelptr);
-	metalAsteroidsSpawn->timeToSpawn= 4.f; 
-
-	StoneAsteroidsSpawner* stoneAsteroidsSpawn = new StoneAsteroidsSpawner;
-	stoneAsteroidsSpawn->SetInitialPosition(1.1f,0.f);
-	stoneAsteroidsSpawn->SetLevel(levelptr);
-	stoneAsteroidsSpawn->timeToSpawn = 6.f;
+	RusherSpawner* rushSpawn2 = new RusherSpawner;
+	rushSpawn2->SetInitialPosition(0.f,1.1f);
+	rushSpawn2->SetLevel(levelptr);
+	rushSpawn2->timeToSpawn = 4.f;
 
 	player->SetLevel(levelptr);
 
@@ -65,13 +51,10 @@ int main(int argc, char** argv)
 	currentLevel.AddActor(player);
 	currentLevel.AddPawn(player);
 
-	currentLevel.AddActor(lonerSpawner);
-	currentLevel.AddActor(rushSpawn);
-	currentLevel.AddActor(droneSpawn);
-
-	currentLevel.AddActor(powerupSpawn);
-	currentLevel.AddActor(metalAsteroidsSpawn);
-	currentLevel.AddActor(stoneAsteroidsSpawn);
+	currentLevel.AddActor(lonerSpawner1);
+	currentLevel.AddActor(rushSpawn1);
+	currentLevel.AddActor(lonerSpawner2);
+	currentLevel.AddActor(rushSpawn2);
 
 	engine.SetLevel(levelptr);
 
